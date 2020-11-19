@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { DeploymentsService } from 'src/core/deployments.api.service';
+import { DeploymentsService } from 'src/core/services/deployments.api.service';
 
 @Component({
-  selector: 'app-deployments',
-  templateUrl: './deployments.component.html',
-  styleUrls: ['./deployments.component.less']
+  selector: 'app-deployment-list',
+  templateUrl: './deployment-list.component.html',
+  styleUrls: ['./deployment-list.component.less']
 })
-export class DeploymentsComponent implements OnInit {
+export class DeploymentListComponent implements OnInit {
   rowData: any;
   count: number;
 
@@ -22,9 +22,10 @@ export class DeploymentsComponent implements OnInit {
 
   setData() {
     this.service.getDeployments().subscribe((data: any) => {
+      console.log(data);
+
       this.rowData = data.Items;
       this.count = data.TotalResults;
-      console.log(data)
     });
   }
 

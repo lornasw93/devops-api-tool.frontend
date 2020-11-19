@@ -11,6 +11,10 @@ export class DeploymentsService extends BaseApiService<object> {
     super(http);
   }
 
+  getDeployment(id){
+    return this.get(`deployments/${id}`);
+  }
+  
   getDeployments() {
     return this.get(`deployments`);
   }

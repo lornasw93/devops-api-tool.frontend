@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeploymentsComponent } from './deployments.component';
+import { DeploymentReadComponent } from './deployment-read.component';
 
-describe('DeploymentsComponent', () => {
-  let component: DeploymentsComponent;
-  let fixture: ComponentFixture<DeploymentsComponent>;
+describe('DeploymentReadComponent', () => {
+  let component: DeploymentReadComponent;
+  let fixture: ComponentFixture<DeploymentReadComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeploymentsComponent ]
+      declarations: [ DeploymentReadComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeploymentsComponent);
+    fixture = TestBed.createComponent(DeploymentReadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
