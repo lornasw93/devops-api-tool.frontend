@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'builds', component: BuildsComponent },
   { path: 'pullrequests', component: PullRequestsComponent },
   { path: 'automation', component: AutomationComponent },
-  { path: 'deployments', loadChildren: () => import('./modules/deployments/deployments.module').then(m => m.DeploymentsModule) },
+  //{ path: 'deployments', loadChildren: () => import('./modules/deployments/deployments.module').then(m => m.DeploymentsModule) },
   { path: '**', component: PageNotFoundComponent }
 ];
 

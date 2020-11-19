@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { BuildsService } from 'src/core/builds.api.service';
 
 @Component({
   selector: 'app-builds',
