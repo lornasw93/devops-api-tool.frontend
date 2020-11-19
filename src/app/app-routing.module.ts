@@ -5,6 +5,7 @@ import { BuildsComponent } from './modules/builds/builds.component';
 import { DeploymentsComponent } from './modules/deployments/deployments.component';
 import { HomeComponent } from './modules/home/home.component';
 import { PullRequestsComponent } from './modules/pull-requests/pull-requests.component';
+import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'deployments', component: DeploymentsComponent },
   { path: 'pullrequests', component: PullRequestsComponent },
   { path: 'automation', component: AutomationComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
