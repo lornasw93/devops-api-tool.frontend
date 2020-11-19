@@ -17,11 +17,6 @@ export abstract class BaseApiService<T> {
 
   getAll(url): Observable<T[]> {
     console.log(`GET ALL: ${url}`);
-
-    var u = `${this.baseUrl}/${url}`;
-
-    console.log(u);
-
     return this.httpClient.get<T[]>(`${this.baseUrl}/${url}`);
   }
 

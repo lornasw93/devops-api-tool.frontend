@@ -13,20 +13,22 @@ export class DeploymentListComponent implements OnInit {
   // private gridApi;
   // private gridColumnApi;
 
-  constructor(private readonly service: DeploymentsService) {
-  }
+  // constructor(private readonly service: DeploymentsService) {
+  // }
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.setData();
+   // this.setData();
   }
 
   setData() {
-    this.service.getDeployments().subscribe((data: any) => {
-      //console.log(data);
+    // this.service.getDeployments().subscribe((data: any) => {
+    //   //console.log(data);
 
-      //this.rowData = data.Items;
-      //this.count = data.TotalResults;
-    });
+    //   //this.rowData = data.Items;
+    //   //this.count = data.TotalResults;
+    // });
   }
 
   // onGridReady(params) {

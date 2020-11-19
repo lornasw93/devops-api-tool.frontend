@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { BuildsService } from 'src/core/services/builds.api.service';
 
 @Component({
   selector: 'app-builds',
@@ -14,6 +15,8 @@ export class BuildsComponent implements OnInit {
   //   private datePipe: DatePipe, 
   //   private location: Location) {
   // }
+
+  constructor() { }
 
    ngOnInit() : void{
   //   this.setData();

@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { AgGridModule } from 'ag-grid-angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -18,7 +18,6 @@ import { NavbarComponent } from './modules/shared/navbar/navbar.component';
 import { FooterComponent } from './modules/shared/footer/footer.component';
 import { AutomationComponent } from './modules/automation/automation.component';
 import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-found.component';
-import { DeploymentsModule } from './modules/deployments/deployments.module';
 
 @NgModule({
   declarations: [
@@ -32,19 +31,22 @@ import { DeploymentsModule } from './modules/deployments/deployments.module';
     PageNotFoundComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     HttpClientModule,
-    FormsModule,
-    AgGridModule.withComponents([]),
+   // FormsModule,
+  //  AgGridModule.withComponents([]),
     FontAwesomeModule,
-    NgxChartsModule,
+   // NgxChartsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    SweetAlert2Module.forRoot(),
-    DeploymentsModule
+  //  ReactiveFormsModule,
+   // SweetAlert2Module.forRoot(),
+   // DeploymentsModule
   ],
-  providers: [DatePipe, NgxChartsModule],
+  providers: [
+    //, NgxChartsModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
