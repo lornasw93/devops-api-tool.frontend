@@ -1,0 +1,32 @@
+export class Deployment {
+    id: string;
+    releaseId: string;
+    channelId: string;
+    deploymentProcessId: string;
+    changes: any[];
+    changesMarkdown: string;
+    environmentId: string;
+    tenantId: string;
+    forcePackageDownload: boolean;
+    forcePackageRedeployment: boolean;
+    skipActions: any[];
+    specificMachineIds: any[];
+    excludedMachineIds: any[];
+    manifestVariableSetId: string;
+    taskId: string;
+    projectId: string;
+    useGuidedFailure: boolean;
+    comments: any;
+    formValues: any;
+    queueTime: any;
+    queueTimeExpiry: any;
+    name: string;
+    created: any;
+    spaceId: string;
+    tentacleRetentionPeriod: any[];
+    deployedBy: string;
+    deployedId: string;
+    failureEncountered: boolean;
+    deployedToMachineIds: any[];
+    links: any[];
+}

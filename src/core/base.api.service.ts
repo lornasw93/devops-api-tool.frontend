@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export abstract class BaseApiService<T> {
-  baseUrl = 'https://localhost:3000/api';
+  baseUrl = 'http://localhost:3000/api';
 
   protected constructor(protected httpClient: HttpClient) { }
 
@@ -17,6 +17,11 @@ export abstract class BaseApiService<T> {
 
   getAll(url): Observable<T[]> {
     console.log(`GET ALL: ${url}`);
+
+    var u = `${this.baseUrl}/${url}`;
+
+    console.log(u);
+
     return this.httpClient.get<T[]>(`${this.baseUrl}/${url}`);
   }
 
