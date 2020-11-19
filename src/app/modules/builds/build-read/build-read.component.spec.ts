@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AutomationComponent } from './automation.component';
+import { BuildReadComponent } from './build-read.component';
 
-describe('AutomationComponent', () => {
-  let component: AutomationComponent;
-  let fixture: ComponentFixture<AutomationComponent>;
+describe('BuildReadComponent', () => {
+  let component: BuildReadComponent;
+  let fixture: ComponentFixture<BuildReadComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AutomationComponent ]
+      declarations: [ BuildReadComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AutomationComponent);
+    fixture = TestBed.createComponent(BuildReadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
