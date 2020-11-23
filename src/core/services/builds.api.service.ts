@@ -11,25 +11,24 @@ export class BuildsService extends BaseApiService<object> {
     super(http);
   }
 
-  buildResource = 'pipelines/builds';
+  buildResource = 'builds';
 
-  getBuild(project) {
-    return this.get(`${this.buildResource}?project=${project}`);
-  }
-
-  getBuilds(project) {
-    return this.getAll(`${this.buildResource}?project=${project}`);
+  getBuilds() {
+    return this.getAll(`builds`);
   }
 
-  getBuildsCount(project) {
-    return this.getCount(`${this.buildResource}/count?project=${project}`);
-  }
+  // getBuild(project) {
+  //   return this.get(`${this.buildResource}?project=${project}`);
+  // }
+  // getBuildsCount(project) {
+  //   return this.getCount(`${this.buildResource}/count?project=${project}`);
+  // }
 
-  getBuildsByMonthChart(project) {
-    return this.getChart(`${this.buildResource}/chart/byMonth/${project}`);
-  }
- 
-  getBuildsByResultChart(project) {
-    return this.getChart(`${this.buildResource}/chart/byResult/${project}`);
-  }
+  // getBuildsByMonthChart(project) {
+  //   return this.getChart(`${this.buildResource}/chart/byMonth/${project}`);
+  // }
+
+  // getBuildsByResultChart(project) {
+  //   return this.getChart(`${this.buildResource}/chart/byResult/${project}`);
+  // }
 }

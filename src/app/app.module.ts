@@ -11,21 +11,18 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from "./modules/home/home.component";
-import { BuildsComponent } from "./modules/builds/builds.component"; 
 import { PullRequestsComponent } from './modules/pull-requests/pull-requests.component';
 import { AppRoutingModule } from './app.routing.module';
 import { NavbarComponent } from './modules/shared/navbar/navbar.component';
 import { FooterComponent } from './modules/shared/footer/footer.component';
-import { AutomationComponent } from './modules/automation/automation.component';
 import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-found.component';
+import { BuildsModule } from './modules/team-city/builds/builds.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    BuildsComponent,
-    AutomationComponent,
     PullRequestsComponent,
     HomeComponent,
     PageNotFoundComponent
@@ -35,7 +32,7 @@ import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-
     BrowserModule,
     HttpClientModule,
    // FormsModule,
-  //  AgGridModule.withComponents([]),
+    AgGridModule.withComponents([]),
     FontAwesomeModule,
    // NgxChartsModule,
     BrowserAnimationsModule,
@@ -43,6 +40,7 @@ import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-
   //  ReactiveFormsModule,
    // SweetAlert2Module.forRoot(),
    // DeploymentsModule
+   BuildsModule
   ],
   providers: [
     //, NgxChartsModule

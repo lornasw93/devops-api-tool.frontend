@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BuildsModule } from './builds/builds.module';
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    BuildsModule
   ]
 })
-export class TestsModule { }
+export class TeamCityModule { }
