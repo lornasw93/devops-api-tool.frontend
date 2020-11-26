@@ -14,7 +14,7 @@ export class BuildsService extends BaseApiService<object> {
   buildResource = 'builds';
 
   getBuilds() {
-    return this.getAll(`builds`);
+    return this.getAll(`tc/builds`);
   }
 
   // getBuild(project) {

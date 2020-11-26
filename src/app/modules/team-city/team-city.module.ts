@@ -1,12 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BuildsModule } from './builds/builds.module';
+import { AgGridModule } from 'ag-grid-angular';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { BuildsComponent } from './builds/builds.component';
+import { TeamCityRoutingModule } from './team-city.routing.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    BuildsComponent
+  ],
   imports: [
     CommonModule,
-    BuildsModule
+    AgGridModule.withComponents([]),
+    FontAwesomeModule,
+    NgxChartsModule,
+    SweetAlert2Module.forRoot(),
+    TeamCityRoutingModule
   ]
 })
 export class TeamCityModule { }

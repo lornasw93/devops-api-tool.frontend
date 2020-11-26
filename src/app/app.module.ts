@@ -1,4 +1,3 @@
-  
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +15,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { NavbarComponent } from './modules/shared/navbar/navbar.component';
 import { FooterComponent } from './modules/shared/footer/footer.component';
 import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-found.component';
-import { BuildsModule } from './modules/team-city/builds/builds.module';
+import { TeamCityModule } from './modules/team-city/team-city.module';
 
 @NgModule({
   declarations: [
@@ -31,19 +30,18 @@ import { BuildsModule } from './modules/team-city/builds/builds.module';
     CommonModule,
     BrowserModule,
     HttpClientModule,
-   // FormsModule,
+    FormsModule,
     AgGridModule.withComponents([]),
     FontAwesomeModule,
-   // NgxChartsModule,
+    NgxChartsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-  //  ReactiveFormsModule,
-   // SweetAlert2Module.forRoot(),
-   // DeploymentsModule
-   BuildsModule
+    ReactiveFormsModule,
+    SweetAlert2Module.forRoot(),
+    TeamCityModule
   ],
   providers: [
-    //, NgxChartsModule
+    NgxChartsModule
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons'; 
 
 @Component({
   selector: 'app-navbar',
@@ -8,13 +8,4 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent {
   faHome = faHome;
-  isExpanded = false;
-
-  collapse() {
-    this.isExpanded = false;
-  }
-
-  toggle() {
-    this.isExpanded = !this.isExpanded;
-  }
 }
