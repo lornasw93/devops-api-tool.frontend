@@ -32,7 +32,7 @@ export class BuildsComponent implements OnInit {
   private gridColumnApi;
   private rowSelection;
 
-  constructor(private readonly service: BuildsService) { }
+  constructor(private service: BuildsService) { }
 
   ngOnInit(): void {
     this.setData();

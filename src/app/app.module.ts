@@ -10,19 +10,16 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from "./modules/home/home.component";
-import { PullRequestsComponent } from './modules/pull-requests/pull-requests.component';
 import { AppRoutingModule } from './app.routing.module';
 import { NavbarComponent } from './modules/shared/navbar/navbar.component';
 import { FooterComponent } from './modules/shared/footer/footer.component';
 import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-found.component';
-import { TeamCityModule } from './modules/team-city/team-city.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    PullRequestsComponent,
     HomeComponent,
     PageNotFoundComponent
   ],
@@ -38,7 +35,6 @@ import { TeamCityModule } from './modules/team-city/team-city.module';
     AppRoutingModule,
     ReactiveFormsModule,
     SweetAlert2Module.forRoot(),
-    TeamCityModule
   ],
   providers: [
     NgxChartsModule
