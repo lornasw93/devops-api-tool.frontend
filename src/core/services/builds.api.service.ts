@@ -6,7 +6,6 @@ import { BaseApiService } from './base.api.service';
   providedIn: 'root'
 })
 export class BuildsService extends BaseApiService<object> {
-
   constructor(private http: HttpClient) {
     super(http);
   }

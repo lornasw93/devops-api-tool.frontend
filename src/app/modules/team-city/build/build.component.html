@@ -1,0 +1,29 @@
+<section>
+  <p>Cascade HR</p>
+  <p>{{build.buildType.description}}</p>
+  <h1>
+    Build #{{build.number}}
+
+    <!--<fa-icon [icon]="faHome"></fa-icon>-->
+  </h1>
+</section>
+
+<fieldset>
+  <legend>#{{build.number}}</legend>
+  <p>Project: Cascade HR</p>
+  <p>Branch: {{build.branchName}}</p>
+  <p></p>
+</fieldset>
+
+<fieldset>
+  <legend>Changes</legend>
+
+  <p>{{build.lastChanges.change.username}}</p>
+</fieldset>
+
+<fieldset>
+  <legend>Tests</legend>
+  <p>{{build.testOccurrences.passed}} passed</p>
+  <p>{{build.testOccurrences.ignored}} ignored</p>
+  <p>{{build.testOccurrences.count}} total</p>
+</fieldset>

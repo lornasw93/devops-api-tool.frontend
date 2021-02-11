@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { NavbarComponent } from './modules/shared/navbar/navbar.component';
 import { FooterComponent } from './modules/shared/footer/footer.component';
 import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-found.component';
+import { TeamCityModule } from "./modules/team-city/team-city.module";
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-
     AppRoutingModule,
     ReactiveFormsModule,
     SweetAlert2Module.forRoot(),
+    TeamCityModule
   ],
   providers: [
     NgxChartsModule
