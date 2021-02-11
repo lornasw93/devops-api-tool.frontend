@@ -3,8 +3,8 @@ import dataFile from './Get projects with subprojects build configs and latest 3
 
 @Component({
   selector: 'app-teamcity',
-  templateUrl: './teamcity.component.html',
-  styleUrls: ['./teamcity.component.less']
+  templateUrl: './team-city.component.html',
+  styleUrls: ['./team-city.component.less']
 })
 export class TeamCityComponent implements OnInit {
   projects:any;

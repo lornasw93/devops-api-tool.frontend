@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TeamCityComponent } from './teamcity.component';
+import { TeamCityComponent } from './team-city.component';
 
 describe('TeamCityComponent', () => {
   let component: TeamCityComponent;
@@ -14,7 +14,7 @@ describe('TeamCityComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TeamcityComponent);
+    fixture = TestBed.createComponent(TeamCityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

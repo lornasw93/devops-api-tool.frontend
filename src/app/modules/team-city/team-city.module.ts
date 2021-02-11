@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TeamCityRoutingModule } from "./team-city.routing.module";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TeamCityComponent } from "./teamcity/teamcity.component";
+import { TeamCityComponent } from "./team-city/team-city.component";
 
 @NgModule({
   declarations: [TeamCityComponent],

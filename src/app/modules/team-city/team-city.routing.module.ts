@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; 
 import { PageNotFoundComponent } from "../shared/page-not-found/page-not-found.component";
-import { TeamCityComponent } from "./teamcity/teamcity.component";
 import { BuildComponent } from "./build/build.component";
+import { TeamCityComponent } from "./team-city/team-city.component";
 
 const teamCityRoutes: Routes = [
   { path: '', component: TeamCityComponent },
