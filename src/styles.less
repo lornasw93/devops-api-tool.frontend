@@ -22,33 +22,6 @@ body {
   color: @almostblack;
 }
 
-span.status {
-  display: inline-block;
-  padding: 0.25em 0.4em;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  font-size: inherit;
-  font-weight: inherit;
-  text-align: left;
-  color: #fff;
-}
-
-span.success {
-  background-color: @green;
-}
-
-span.mid {
-  background-color: @orange;
-}
-
-span.fail {
-  background-color: @red;
-}
-
 .ag-theme-material {
   font-size: 11.5px;
 
@@ -114,6 +87,14 @@ span.fail {
   }
 }
 
-fieldset,legend {
-  border: 1px solid black;
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
 }
+
+p, ul, li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+

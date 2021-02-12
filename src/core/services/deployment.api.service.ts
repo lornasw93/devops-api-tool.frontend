@@ -5,7 +5,7 @@ import { BaseApiService } from './base.api.service';
 @Injectable({
   providedIn: 'root'
 })
-export class DeploymentsService extends BaseApiService<object> {
+export class DeploymentService extends BaseApiService<object> {
 
   constructor(private http: HttpClient) {
     super(http);

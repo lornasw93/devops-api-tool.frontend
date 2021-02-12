@@ -1,7 +1,9 @@
 .firebaserc
 /node_modules
 .vs/
-/src/app/modules/team-city/build/data.json
+.git
+.firebase
+/src/app/modules/team-city/build/build.json
 /src/app/modules/team-city/team-city/Get projects with subprojects build configs and latest 3 builds for each.json
 
 # See http://help.github.com/ignore-files/ for more about ignoring files.
