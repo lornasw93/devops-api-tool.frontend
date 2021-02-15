@@ -28,14 +28,14 @@ export class BuildComponent implements OnInit {
   ngOnInit(): void {
     this.build = buildFile.build;
 
-    var startDate = this.datePipe.transform(this.build.startDate, 'dd/MMM/yyyy hh:mm:ss');
-    var finishDate = this.datePipe.transform(this.build.finishDate, 'dd/MMM/yyyy hh:mm:ss');
+    var startDate = this.datePipe.transform(this.build.startDate, 'dd/MM/yyyy H:mm:ss');
+    var finishDate = this.datePipe.transform(this.build.finishDate, 'dd/MM/yyyy H:mm:ss');
 
     var difference = Math.abs(new Date(finishDate).getTime() - new Date(startDate).getTime());
     var seconds = difference / 1000;
     var minutes = difference / 1000 / 60;
     var hours = minutes / 60;
-      
+
     this.duration = 'difference: ' + hours + 'h:' + minutes + 'm:' + seconds + 's';
   }
 }

@@ -15,6 +15,7 @@ import { NavbarComponent } from './modules/shared/navbar/navbar.component';
 import { FooterComponent } from './modules/shared/footer/footer.component';
 import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-found.component';
 import { TeamCityModule } from "./modules/team-city/team-city.module";
+import { DateAgoPipe } from "../core/pipes/date-ago.pipe";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TeamCityModule } from "./modules/team-city/team-city.module";
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DateAgoPipe
   ],
   imports: [
     CommonModule,
