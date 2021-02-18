@@ -2,19 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { BuildService } from "../../../../core/services/build.api.service";
 
 @Component({
-  selector: 'app-teamcity',
-  templateUrl: './team-city.component.html',
-  styleUrls: ['./team-city.component.less']
+  selector: 'app-build-queue',
+  templateUrl: './build-queue.component.html',
+  styleUrls: ['./build-queue.component.less']
 })
-export class TeamCityComponent implements OnInit {
+export class BuildQueueComponent implements OnInit {
   buildQueue: any;
 
-  constructor(private service: BuildService) { 
+  constructor(private service: BuildService) {
   }
-  
+
   ngOnInit(): void {
     this.service.getBuildQueue().subscribe((data: any) => {
-      this.buildQueue = data.builds; 
+      this.buildQueue = data.builds;
     });
   }
 }

@@ -1,0 +1,7 @@
+{
+  "/buildQueue": {
+    "target": null,
+    "http": "localhost:3000",
+    "secure": false
+  }
+}

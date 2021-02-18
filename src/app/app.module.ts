@@ -24,7 +24,7 @@ import { DateAgoPipe } from "../core/pipes/date-ago.pipe";
     FooterComponent,
     HomeComponent,
     PageNotFoundComponent,
-    DateAgoPipe
+    DateAgoPipe,
   ],
   imports: [
     CommonModule,

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import buildFile from './build.json';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { BuildService } from "../../../../core/services/build.api.service";
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-build',
@@ -16,26 +14,29 @@ export class BuildComponent implements OnInit {
   id: number;
   build: any;
   buildChanges: any;
-
   duration: any;
-
+   
   constructor(private activatedRoute: ActivatedRoute,
-    private buildService: BuildService,
-    private datePipe: DatePipe) {
+    private service: BuildService) {
     this.id = this.activatedRoute.snapshot.params.id;
   }
 
   ngOnInit(): void {
-    this.build = buildFile.build;
+    this.service.getBuild(this.id).subscribe((data: any) => {
+      this.build = data;
+      this.buildChanges = data.changes;
+    });
 
-    var startDate = this.datePipe.transform(this.build.startDate, 'dd/MM/yyyy H:mm:ss');
-    var finishDate = this.datePipe.transform(this.build.finishDate, 'dd/MM/yyyy H:mm:ss');
+    //this.build = buildFile.build;
 
-    var difference = Math.abs(new Date(finishDate).getTime() - new Date(startDate).getTime());
-    var seconds = difference / 1000;
-    var minutes = difference / 1000 / 60;
-    var hours = minutes / 60;
+    //var startDate = this.datePipe.transform(this.build.startDate, 'dd/MM/yyyy H:mm:ss');
+    //var finishDate = this.datePipe.transform(this.build.finishDate, 'dd/MM/yyyy H:mm:ss');
 
-    this.duration = 'difference: ' + hours + 'h:' + minutes + 'm:' + seconds + 's';
+    //var difference = Math.abs(new Date(finishDate).getTime() - new Date(startDate).getTime());
+    //var seconds = difference / 1000;
+    //var minutes = difference / 1000 / 60;
+    //var hours = minutes / 60;
+
+    //this.duration = 'difference: ' + hours + 'h:' + minutes + 'm:' + seconds + 's';
   }
 }

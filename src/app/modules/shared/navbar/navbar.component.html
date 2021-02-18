@@ -1,9 +1,14 @@
-<ul>
-  <li><a [routerLink]="['/']"><fa-icon [icon]="faHome"></fa-icon></a></li>
-  <li><a [routerLink]="['/teamcity']">Team City</a></li>
-  <li><a [routerLink]="['/teamcity/builds/286504']">-- Build (id)</a></li>
-  <!--
-  <li><a [routerLink]="['/builds']">Builds</a></li>
-  <li><a [routerLink]="['/builds']">Tests</a></li>
-  <li><a [routerLink]="['/builds']">Deployments</a></li>-->
-</ul>
+<nav class="navbar navbar-expand-sm bg-light">
+  <ul class="navbar-nav">
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/']"><fa-icon [icon]="faHome"></fa-icon></a></li>
+
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/']">Bitbucket</a></li>
+
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/']">Octopus Deploy</a></li>
+
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/teamcity']">Team City</a></li>
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/teamcity/buildqueue']">Build Queue</a></li>
+    <li class="nav-item"><a class="nav-link" [routerLink]="['/teamcity/builds/286504']">Build:Id</a></li>
+  </ul>
+</nav>
+
