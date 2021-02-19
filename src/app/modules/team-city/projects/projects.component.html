@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1>Projects ({{projects.count}})</h1>
+  </div>
+</div>
+
+<div class="container">
+  <ul *ngFor="let project of projects.project;">
+    <li>
+      <p><a href="{{project.webUrl}}" target="_blank">{{project.name}}</a> - {{project.description}}</p>
+    </li>
+  </ul>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { BuildService } from "../../../../core/services/build.api.service";
+import { BuildService } from "../../../../core/services/team-city/build.api.service";
 
 @Component({
   selector: 'app-build',

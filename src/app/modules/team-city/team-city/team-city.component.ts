@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BuildService } from "../../../../core/services/build.api.service";
+import { BuildService } from "../../../../core/services/team-city/build.api.service";
 
 @Component({
   selector: 'app-teamcity',

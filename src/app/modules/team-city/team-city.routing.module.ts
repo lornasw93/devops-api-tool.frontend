@@ -4,12 +4,18 @@ import { PageNotFoundComponent } from "../shared/page-not-found/page-not-found.c
 import { BuildComponent } from "./build/build.component";
 import { TeamCityComponent } from "./team-city/team-city.component";
 import { BuildQueueComponent } from "./build-queue/build-queue.component";
+import { ProjectsComponent } from "./projects/projects.component";
+import { ProjectComponent } from "./project/project.component";
+import { BuildsComponent } from "./builds/builds.component";
 
 const teamCityRoutes: Routes = [
   { path: '', component: TeamCityComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'projects/:id', component: ProjectComponent },
+  { path: 'builds', component: BuildsComponent },
   { path: 'builds/:id', component: BuildComponent },
-  { path: 'buildqueue', component: BuildQueueComponent },
+  { path: 'builds/queue', component: BuildQueueComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
