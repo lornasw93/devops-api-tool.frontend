@@ -5,8 +5,7 @@ import { BuildService } from "../../../../core/services/team-city/build.api.serv
 
 @Component({
   selector: 'app-build',
-  templateUrl: './build.component.html',
-  styleUrls: ['./build.component.less']
+  templateUrl: './build.component.html' 
 })
 export class BuildComponent implements OnInit {
   faHome = faHome;

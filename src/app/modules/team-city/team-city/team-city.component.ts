@@ -3,8 +3,7 @@ import { BuildService } from "../../../../core/services/team-city/build.api.serv
 
 @Component({
   selector: 'app-teamcity',
-  templateUrl: './team-city.component.html',
-  styleUrls: ['./team-city.component.less']
+  templateUrl: './team-city.component.html'
 })
 export class TeamCityComponent implements OnInit {
   buildQueue: any;

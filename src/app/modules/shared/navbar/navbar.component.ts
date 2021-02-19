@@ -3,8 +3,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.less']
+  templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {
   faHome = faHome;

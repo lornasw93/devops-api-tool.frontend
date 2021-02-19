@@ -3,8 +3,7 @@ import { ProjectService } from "../../../../core/services/team-city/project.api.
 
 @Component({
   selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.less']
+  templateUrl: './projects.component.html' 
 })
 export class ProjectsComponent implements OnInit {
   projects: any;

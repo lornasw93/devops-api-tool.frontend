@@ -8,6 +8,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   //{ path: 'builds', component: BuildsComponent },
   { path: 'teamcity', loadChildren: () => import('./modules/team-city/team-city.module').then(m => m.TeamCityModule) },
+  { path: 'bitbucket', loadChildren: () => import('./modules/bitbucket/bitbucket.module').then(m => m.BitbucketModule) },
+  { path: 'octopusdeploy', loadChildren: () => import('./modules/octopus-deploy/octopus-deploy.module').then(m => m.OctopusDeployModule) },
   { path: '**', component: PageNotFoundComponent }
 ];
 

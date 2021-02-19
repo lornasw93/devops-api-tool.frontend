@@ -16,6 +16,9 @@ import { FooterComponent } from './modules/shared/footer/footer.component';
 import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-found.component';
 import { TeamCityModule } from "./modules/team-city/team-city.module";
 import { DateAgoPipe } from "../core/pipes/date-ago.pipe";
+import { BitbucketModule } from "./modules/bitbucket/bitbucket.module";
+import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.module";
+import { PageHeaderComponent } from "./modules/shared/components/page-header/page-header.component";
 
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ import { DateAgoPipe } from "../core/pipes/date-ago.pipe";
     HomeComponent,
     PageNotFoundComponent,
     DateAgoPipe,
+    PageHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -38,8 +42,11 @@ import { DateAgoPipe } from "../core/pipes/date-ago.pipe";
     AppRoutingModule,
     ReactiveFormsModule,
     SweetAlert2Module.forRoot(),
-    TeamCityModule
+    TeamCityModule,
+    BitbucketModule,
+    OctopusDeployModule
   ],
+  exports: [PageHeaderComponent],
   providers: [
     NgxChartsModule
   ],

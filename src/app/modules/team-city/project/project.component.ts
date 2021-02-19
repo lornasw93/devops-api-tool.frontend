@@ -4,8 +4,7 @@ import { ProjectService } from "../../../../core/services/team-city/project.api.
 
 @Component({
   selector: 'app-project',
-  templateUrl: './project.component.html',
-  styleUrls: ['./project.component.less']
+  templateUrl: './project.component.html' 
 })
 export class ProjectComponent implements OnInit {
   id: number;

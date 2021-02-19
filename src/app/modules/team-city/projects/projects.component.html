@@ -1,9 +1,5 @@
-<div class="container-fluid">
-  <div class="jumbotron">
-    <h1>Projects ({{projects.count}})</h1>
-  </div>
-</div>
-
+<app-page-header title="Projects ({{projects.count}})" description=""></app-page-header>
+  
 <div class="container">
   <ul *ngFor="let project of projects.project;">
     <li>
