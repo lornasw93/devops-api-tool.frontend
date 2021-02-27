@@ -1,1 +1,77 @@
-<h1>DevOps API Tool</h1>
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1>DevOps API Tool</h1>
+  </div>
+</div>
+
+<!--<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Builds</h5>
+          <div class="card-text">
+
+
+            <ul>
+              <li><fa-icon [icon]="faSync"></fa-icon> 2 queued</li>
+              <li><fa-icon [icon]="faCheck"></fa-icon> 12 success</li>
+              <li><fa-icon [icon]="faTimes"></fa-icon> 1 failed</li>
+              <li><fa-icon [icon]="faExclamation"></fa-icon> 1 cancelled</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Pull Requests</h5>
+          <div class="card-text">
+            <ul>
+              <li><fa-icon [icon]="faEye"></fa-icon> 19 active</li>
+              <li><fa-icon [icon]="faCheck"></fa-icon> 2 merged</li>
+              <li><fa-icon [icon]="faTimes"></fa-icon> 1 declined</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Deployments</h5>
+          <div class="card-text">
+            <ul>
+              <li><fa-icon [icon]="faCheck"></fa-icon> 3 success</li>
+              <li><fa-icon [icon]="faTimes"></fa-icon> 1 failed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<div class="container-fluid">
+  <div class="cards">
+    <div *ngFor="let build of rowData.build">
+      <div class="card">
+        <span class="card-header" style="background-image: url(http://placeimg.com/400/200/animals);">
+          <span class="card-title">
+            <h3>#{{build.number}}</h3>
+          </span>
+        </span>
+        <span class="card-summary">
+          {{build.branchName}}
+          {{build.status}}
+        </span>
+        <span class="card-meta">
+          Published: June 18th, 2015
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

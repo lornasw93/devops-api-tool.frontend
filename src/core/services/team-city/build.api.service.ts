@@ -15,7 +15,11 @@ export class BuildService extends BaseApiService<object> {
     return this.get(`teamcity-builds-id`);
     //return this.get(`build/${id}`);
   }
-  
+
+  getLatest10Builds(): Observable<any> {
+    return this.getAll(`teamcity-get-lastest-10-builds`);
+  }
+
   getBuildQueue(): Observable<any> {
     return this.get(`teamcity-builds-queue`);
   }

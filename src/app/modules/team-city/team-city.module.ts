@@ -23,7 +23,7 @@ import { BuildsComponent } from './builds/builds.component';
     TeamCityRoutingModule,
     FontAwesomeModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  //schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [DatePipe]
 })
 export class TeamCityModule { }

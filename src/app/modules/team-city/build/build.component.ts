@@ -5,7 +5,7 @@ import { BuildService } from "../../../../core/services/team-city/build.api.serv
 
 @Component({
   selector: 'app-build',
-  templateUrl: './build.component.html' 
+  templateUrl: './build.component.html'
 })
 export class BuildComponent implements OnInit {
   faHome = faHome;
@@ -14,7 +14,9 @@ export class BuildComponent implements OnInit {
   build: any;
   buildChanges: any;
   duration: any;
-   
+  status: string;
+  statusColor: string;
+
   constructor(private activatedRoute: ActivatedRoute,
     private service: BuildService) {
     this.id = this.activatedRoute.snapshot.params.id;
@@ -24,9 +26,15 @@ export class BuildComponent implements OnInit {
     this.service.getBuild(this.id).subscribe((data: any) => {
       this.build = data;
       this.buildChanges = data.changes;
+      this.status = data.status;
+      this.statusColor = data.status;
     });
 
-    //this.build = buildFile.build;
+    //if (this.status === 'SUCCESS') {
+    //  this.statusColor = '#28a745';
+    //} else {
+    //  this.statusColor = '#dc3545';
+    //}
 
     //var startDate = this.datePipe.transform(this.build.startDate, 'dd/MM/yyyy H:mm:ss');
     //var finishDate = this.datePipe.transform(this.build.finishDate, 'dd/MM/yyyy H:mm:ss');

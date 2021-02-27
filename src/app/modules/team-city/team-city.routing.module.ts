@@ -11,12 +11,12 @@ import { BuildsComponent } from "./builds/builds.component";
 const teamCityRoutes: Routes = [
   { path: '', component: TeamCityComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'projects/:id', component: ProjectComponent },
   { path: 'builds', component: BuildsComponent },
   { path: 'builds/:id', component: BuildComponent },
-  { path: 'builds/queue', component: BuildQueueComponent },
-  { path: '**', component: PageNotFoundComponent }
+  { path: 'builds/queue', component: BuildQueueComponent }
 ];
 
 @NgModule({
