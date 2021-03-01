@@ -1,23 +1,25 @@
-<!--<app-page-header title="Build #{{build.number}}" description=""></app-page-header>-->
-
-<div class="container-fluid">
-  <div class="jumbotron">
-    <h1>Build #{{build.number}}</h1>
-  </div>
-</div>
+<app-page-header title="Build #{{build.number}}" description="" status="{{build.status}}"></app-page-header>
 
 <div class="container">
   <p>Project: {{build.buildType.projectName}}</p>
   <p>Branch: {{build.branchName}}</p>
   <p>Duration: {{build.startDate | date:'d MMM H:mm'}} - {{build.finishDate | date:'d MMM H:mm'}} ({{duration}})</p>
   <p>NuGet Packages: 71</p>
-  <p><a href="/">Download log file</a></p>
+  <p><a href="/">View log file</a></p>
   <p><a href="/">View tests (19399)</a></p>
 
   <hr />
 
   <p><strong>Status </strong><span class="badge badge-success">{{build.status}}</span></p>
   <p>{{build.statusText}}</p>
+
+  <hr />
+
+  <p><strong>Tests ({{build.testOccurrences.count}})</strong></p>
+  <ul>
+    <li><p>19374 passed</p></li>
+    <li><p>25 ignored</p></li>
+  </ul>
 
   <hr />
 

@@ -20,4 +20,8 @@ export class ProjectService extends BaseApiService<object> {
     return this.getAll('teamcity-projects');
     //return this.getAll(`projects`);
   }
+
+  getProjectsBuildTypes() {
+    return this.getAll('teamcity-build-types-with-project-details');
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BuildService } from "../../../../core/services/team-city/build.api.service";
 
 @Component({
   selector: 'app-builds',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuildsComponent implements OnInit {
 
-  constructor() { }
+  builds: any[];
 
-  ngOnInit(): void {
+
+  constructor(private service: BuildService) { }
+
+  ngOnInit(): void { 
+    this.service.getLatest10Builds().subscribe((data: any) => {
+      this.builds = data;
+    });
   }
-
 }

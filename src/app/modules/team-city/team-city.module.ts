@@ -8,6 +8,7 @@ import { BuildQueueComponent } from "./build-queue/build-queue.component";
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectComponent } from './project/project.component';
 import { BuildsComponent } from './builds/builds.component';
+import { PageHeaderComponent } from "../shared/components/page-header/page-header.component";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BuildsComponent } from './builds/builds.component';
     BuildQueueComponent,
     ProjectsComponent,
     ProjectComponent,
-    BuildsComponent
+    BuildsComponent,
+    PageHeaderComponent
   ],
   imports: [
     CommonModule,

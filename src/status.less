@@ -7,58 +7,69 @@
 @red: #dc3545;
 
 span {
-	.badge {
-		font-weight: 400;
-	}
+  .badge {
+    font-weight: 400;
+  }
 
-	.badge-success {
-		background-color: @green;
-	}
+  .badge-success {
+    background-color: @green;
+  }
+}
+
+.SUCCESS div, .FAILURE, .UNKNOWN {
+  color: #fff;
+}
+
+.SUCCESS div {
+  background-color: @green;
+}
+
+.FAILURE {
+  background-color: @red;
+}
+
+.UNKNOWN {
+  background-color: @dark-grey;
 }
 
 .status {
-	color: #fff;
+  color: #fff;
+}
 
-	.build {
-		.SUCCESS {
-			background-color: @green;
-		}
-		.FAILURE {
-			background-color: @red;
-		}
-		.UNKNOWN {}
-	}
-	
-	.build-file-change-type {
-		.added {
-			background-color: @green;
-		}
-		.edited {
-			background-color: @dark-yellow;
-		}
-		.removed {
-			background-color: @red;
-		}
-		.copied {
-			background-color: @dark-yellow;
-		}
-		.unchanged {
-			background-color: @dark-grey;
-		}	
-	}
-	
-	.pull-request {
-		.OPEN {
-			background-color: #0052CC;
-		}
-		.MERGED {
-			background-color: @green;
-		}
-		.DECLINED {
-			background-color: @red;
-		}
-		.CLOSED {
-			background-color: @dark-grey;
-		} 
-	}
+//.build-file-change-type
+.added {
+  background-color: @green;
+}
+
+.edited {
+  background-color: @dark-yellow;
+}
+
+.removed {
+  background-color: @red;
+}
+
+.copied {
+  background-color: @dark-yellow;
+}
+
+.unchanged {
+  background-color: @dark-grey;
+}
+
+// pull-requests
+.OPEN {
+  background-color: #0052CC;
+}
+
+.MERGED {
+  background-color: @green;
+}
+
+.DECLINED {
+  background-color: @red;
+}
+
+.CLOSED {
+  background-color: @dark-grey;
 }

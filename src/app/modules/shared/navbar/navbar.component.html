@@ -1,20 +1,31 @@
-<ul>
-  <li><a [routerLink]="['/']"><fa-icon [icon]="faHome"></fa-icon></a></li>
-  <li><a [routerLink]="['/bitbucket']"><fa-icon [icon]="faBitbucket"></fa-icon> Bitbucket</a></li>
-  <ul>
-    <li><a [routerLink]="['/bitbucket/pullrequests']">Pull Requests</a></li>
-  </ul>
-  <li><a [routerLink]="['/teamcity']"><fa-icon [icon]="faHammer"></fa-icon>Team City</a></li>
-  <ul>
-    <li><a [routerLink]="['/teamcity/projects']">Projects</a></li>
-    <li><a [routerLink]="['/teamcity/projects/CascadeHr_Legacy']">Project:Id</a></li>
-    <li><a [routerLink]="['/teamcity/builds/queue']">Build Queue</a></li>
-    <li><a [routerLink]="['/teamcity/builds']">Builds</a></li>
-    <li><a [routerLink]="['/teamcity/builds/286504']">Build:Id</a></li>
-  </ul>
-  <li><a [routerLink]="['/octopusdeploy']"><fa-icon [icon]="faOctopusDeploy"></fa-icon> Octopus Deploy</a></li>
-  <ul>
-    <li><a [routerLink]="['/octopusdeploy/deployments']">Deployments</a></li>
-  </ul>
-  <li>Welcome, Lorna</li>
-</ul>
+<div class="hm-gradient">
+  <nav class="navbar navbar-expand-lg navbar-dark cyan">
+    <a class="navbar-brand font-bold" href="#">DevOps API Tool</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']"><fa-icon [icon]="faHome"></fa-icon></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/bitbucket']"><fa-icon [icon]="faBitbucket"></fa-icon></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/teamcity']"><fa-icon [icon]="faHammer"></fa-icon>(2)</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/octopusdeploy']"><fa-icon [icon]="faOctopusDeploy"></fa-icon>(1)</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><fa-icon [icon]="faUser"></fa-icon></a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink-4">
+            <a class="dropdown-item" href="#">My account</a>
+            <a class="dropdown-item" href="#">Log out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav> 
+</div>

@@ -17,8 +17,7 @@ import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-
 import { TeamCityModule } from "./modules/team-city/team-city.module";
 import { DateAgoPipe } from "../core/pipes/date-ago.pipe";
 import { BitbucketModule } from "./modules/bitbucket/bitbucket.module";
-import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.module";
-import { PageHeaderComponent } from "./modules/shared/components/page-header/page-header.component";
+import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.module"; 
 
 @NgModule({
   declarations: [
@@ -27,8 +26,7 @@ import { PageHeaderComponent } from "./modules/shared/components/page-header/pag
     FooterComponent,
     HomeComponent,
     PageNotFoundComponent,
-    DateAgoPipe,
-    PageHeaderComponent
+    DateAgoPipe, 
   ],
   imports: [
     CommonModule,
@@ -45,8 +43,7 @@ import { PageHeaderComponent } from "./modules/shared/components/page-header/pag
     TeamCityModule,
     BitbucketModule,
     OctopusDeployModule
-  ],
-  exports: [PageHeaderComponent],
+  ], 
   providers: [
     NgxChartsModule
   ],

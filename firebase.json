@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/devops-api-tool-frontend",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",

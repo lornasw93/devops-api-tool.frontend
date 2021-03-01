@@ -12,35 +12,14 @@ export class HomeComponent implements OnInit {
   faExclamation = faExclamation;
   faTimes = faTimes;
   faEye = faEye;
-
-  //gridApi;
-  //gridColumnApi;
-
-  //columnDefs;
-  //defaultColDef;
-  rowData: any[];
-
+   
   constructor(private service: BuildService) {
   }
 
   ngOnInit(): void {
-    //this.columnDefs = [
-    //  //{ headerName: 'Id', field: 'id', width: 175 },
-    //  { headerName: 'Name', field: 'name', width: 260 },
-    //  { headerName: 'Builds', field: 'builds', width: 175 },
-    //];
 
-    //this.defaultColDef = {
-    //  sortable: false,
-    //  resizable: true,
-    //  filter: false,
-    //  autoHeight: true,
-    //  rowSelection: 'single'
-    //}; 
-  }
 
-  //onGridReady(params) {
-  //  this.gridApi = params.api;
-  //  this.gridColumnApi = params.columnApi;
-  //}
+
+
+  } 
 }
