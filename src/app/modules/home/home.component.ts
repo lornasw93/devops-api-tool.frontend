@@ -36,13 +36,7 @@ export class HomeComponent implements OnInit {
     //  filter: false,
     //  autoHeight: true,
     //  rowSelection: 'single'
-    //};
-
-    this.service.getLatest10Builds().subscribe((data: any) => {
-      this.rowData = data;
-
-      console.log(this.rowData);
-    });
+    //}; 
   }
 
   //onGridReady(params) {

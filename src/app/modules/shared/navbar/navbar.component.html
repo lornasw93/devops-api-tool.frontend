@@ -1,13 +1,10 @@
-<img src="../../../../assets/logo.png" height="80" />
-
 <ul>
   <li><a [routerLink]="['/']"><fa-icon [icon]="faHome"></fa-icon></a></li>
-  <li><a [routerLink]="['/bitbucket']">Bitbucket</a></li>
+  <li><a [routerLink]="['/bitbucket']"><fa-icon [icon]="faBitbucket"></fa-icon> Bitbucket</a></li>
   <ul>
     <li><a [routerLink]="['/bitbucket/pullrequests']">Pull Requests</a></li>
-    <li><a [routerLink]="['/bitbucket/projects']">Projects</a></li>
   </ul>
-  <li><a [routerLink]="['/teamcity']">Team City</a></li>
+  <li><a [routerLink]="['/teamcity']"><fa-icon [icon]="faHammer"></fa-icon>Team City</a></li>
   <ul>
     <li><a [routerLink]="['/teamcity/projects']">Projects</a></li>
     <li><a [routerLink]="['/teamcity/projects/CascadeHr_Legacy']">Project:Id</a></li>
@@ -15,7 +12,7 @@
     <li><a [routerLink]="['/teamcity/builds']">Builds</a></li>
     <li><a [routerLink]="['/teamcity/builds/286504']">Build:Id</a></li>
   </ul>
-  <li><a [routerLink]="['/octopusdeploy']">Octopus Deploy</a></li>
+  <li><a [routerLink]="['/octopusdeploy']"><fa-icon [icon]="faOctopusDeploy"></fa-icon> Octopus Deploy</a></li>
   <ul>
     <li><a [routerLink]="['/octopusdeploy/deployments']">Deployments</a></li>
   </ul>
