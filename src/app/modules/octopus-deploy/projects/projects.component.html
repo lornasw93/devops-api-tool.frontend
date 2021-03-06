@@ -1,1 +1,7 @@
-<p>projects works!</p>
+<h1>Projects ({{projects.TotalResults}})</h1>
+
+<div *ngFor="let project of projects.Items">
+  <h4>{{project.Name}}</h4>
+  <p>{{project.Description}}</p>
+  <p>Auto create release: {{project.AutoCreateRelease}}</p>
+</div>

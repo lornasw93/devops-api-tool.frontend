@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-interruptions',
-  templateUrl: './interruptions.component.html',
-  styleUrls: ['./interruptions.component.less']
+  templateUrl: './interruptions.component.html' 
 })
 export class InterruptionsComponent implements OnInit {
 

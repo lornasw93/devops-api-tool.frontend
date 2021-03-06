@@ -1,1 +1,13 @@
-<p>releases works!</p>
+<h1>Releases ({{releases.Items.length}})</h1>
+<p>Total Results: {{releases.TotalResults}}</p>
+
+<div *ngFor="let release of releases.Items">
+  <p>{{release.Assembled | date}}</p>
+
+  <p>Build info ({{release.BuildInformation.length}})</p>
+  
+  <p>Selected packages ({{release.SelectedPackages.length}})</p>
+
+  <hr/>
+
+</div>

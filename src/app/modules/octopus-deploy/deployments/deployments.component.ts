@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faUser, faCalendar } from '@fortawesome/free-solid-svg-icons';
-import { DeploymentService } from "../../../../core/services/octopus-deploy/deployment.api.service";
+import { OctopusDeployService } from "../../../../core/services/octopus-deploy.api.service";
 
 @Component({
   selector: 'app-deployments',
@@ -21,7 +21,7 @@ export class DeploymentsComponent implements OnInit {
     { make: 'Porsche', model: 'Boxter', price: 72000 }
   ];
 
-  constructor(private service: DeploymentService) { }
+  constructor(private service: OctopusDeployService) { }
 
   ngOnInit(): void {
     this.service.getDeployments().subscribe((data: any[]) => {

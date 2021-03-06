@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamService } from "../../../../core/services/octopus-deploy/team.api.service";
+import { OctopusDeployService } from "../../../../core/services/octopus-deploy.api.service";
 
 @Component({
   selector: 'app-teams',
@@ -8,7 +8,7 @@ import { TeamService } from "../../../../core/services/octopus-deploy/team.api.s
 export class TeamsComponent implements OnInit {
   teams: any;
 
-  constructor(private service: TeamService) { }
+  constructor(private service: OctopusDeployService) { }
 
   ngOnInit(): void {
     this.service.getTeams().subscribe((data: any[]) => {

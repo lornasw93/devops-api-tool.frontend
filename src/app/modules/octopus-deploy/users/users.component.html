@@ -1,1 +1,8 @@
-<p>users works!</p>
+<h1>Users ({{users.TotalResults}})</h1>
+
+<div *ngFor="let user of users.Items">
+  <h4>{{user.DisplayName}}</h4>
+
+  <p><a href="mailto:{{user.EmailAddress}}">{{user.EmailAddress}}</a></p>
+  <img src="{{user.Links.Avatar}}" /> 
+</div>
