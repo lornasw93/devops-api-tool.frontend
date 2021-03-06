@@ -11,11 +11,7 @@ export class DeploymentService extends BaseApiService<object> {
     super(http);
   }
 
-  getDeployment(id){
-    return this.get(`deployments/${id}`);
-  }
-  
   getDeployments() {
-    return this.get(`deployments`);
+    return this.getAll(`octopusdeploy-deployments`);
   }
 }

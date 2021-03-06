@@ -1,9 +1,27 @@
 <div class="container-fluid">
   <div class="jumbotron">
-    <h1>Deployments</h1>
+    <h1>Deployments ({{deployments.Items.length}})</h1>
   </div>
 </div>
 
-<div class="container">
-  <p>Not sure what to have on this page...</p>
+<div class="container">  
+  <p>Total Count: {{deployments.TotalResults}}</p>
+   
+  <div *ngFor="let deployment of deployments.Items">
+    <h4>{{deployment.Name}}</h4>
+
+    <p>By {{deployment.DeployedBy}} @ {{deployment.Created | date}}</p>
+
+    <div *ngFor="let change of deployment.Changes">
+      <div *ngFor="let buildInfo of change.BuildInformation">
+        <p><strong>Build Info</strong></p>
+        <p><a href="{{buildInfo.BuildUrl}}">[{{buildInfo.BuildNumber}}]</a> Branch: {{buildInfo.Branch}}</p>
+      </div>
+
+      <div *ngFor="let workItem of change.WorkItems">
+        <p><strong>Work Items</strong></p>
+        <p><a href="{{workItem.LinkUrl}}">[{{workItem.Id}}]</a> {{workItem.Description}}</p>
+      </div>
+    </div>
+  </div>
 </div>

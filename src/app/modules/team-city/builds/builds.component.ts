@@ -13,8 +13,8 @@ export class BuildsComponent implements OnInit {
   constructor(private service: BuildService) { }
 
   ngOnInit(): void { 
-    this.service.getLatest10Builds().subscribe((data: any) => {
-      this.builds = data;
-    });
+    //this.service.getLatest10Builds().subscribe((data: any) => {
+    //  this.builds = data;
+    //});
   }
 }

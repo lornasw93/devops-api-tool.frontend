@@ -1,0 +1,7 @@
+<h1>Teams ({{teams.TotalResults}})</h1>
+
+<div *ngFor="let team of teams.Items">
+  <h4>{{team.Name}}</h4>
+  <p>Members ({{team.MemberUserIds.length}})</p>
+  <p>{{team.Description}}</p>
+</div>

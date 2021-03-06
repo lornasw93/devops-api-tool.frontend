@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faOctopusDeploy, faBitbucket } from '@fortawesome/free-brands-svg-icons';
-import { faHome, faHammer, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faHammer, faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -12,4 +12,5 @@ export class NavbarComponent {
   faBitbucket = faBitbucket;
   faHammer = faHammer;
   faUser = faUser;
+  faSearch = faSearch;
 }

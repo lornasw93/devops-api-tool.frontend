@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { AgGridModule } from 'ag-grid-angular';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -17,7 +17,9 @@ import { PageNotFoundComponent } from './modules/shared/page-not-found/page-not-
 import { TeamCityModule } from "./modules/team-city/team-city.module";
 import { DateAgoPipe } from "../core/pipes/date-ago.pipe";
 import { BitbucketModule } from "./modules/bitbucket/bitbucket.module";
-import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.module"; 
+import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.module";
+import { AccountModule } from "./modules/account/account.module";
+import { SearchComponent } from "./modules/shared/components/search/search.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.mod
     FooterComponent,
     HomeComponent,
     PageNotFoundComponent,
-    DateAgoPipe, 
+    DateAgoPipe,
+    SearchComponent
   ],
   imports: [
     CommonModule,
@@ -42,10 +45,11 @@ import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.mod
     SweetAlert2Module.forRoot(),
     TeamCityModule,
     BitbucketModule,
-    OctopusDeployModule
+    OctopusDeployModule,
+    AccountModule
   ], 
   providers: [
-    NgxChartsModule
+    NgxChartsModule, DatePipe
   ],
   bootstrap: [AppComponent]
 })
