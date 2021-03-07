@@ -30,4 +30,8 @@ export class OctopusDeployService extends BaseApiService<object> {
   getReleases() {
     return this.getAll(`octopusdeploy-releases`);
   }
+
+  getEnvironments() {
+    return this.getAll(`octopusdeploy-environments`);
+  }
 }

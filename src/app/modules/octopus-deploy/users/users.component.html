@@ -1,8 +1,14 @@
-<h1>Users ({{users.TotalResults}})</h1>
+<app-page-header title="Builds ({{users.TotalResults}})" description=""></app-page-header>
 
-<div *ngFor="let user of users.Items">
-  <h4>{{user.DisplayName}}</h4>
+<div class="container">
+<div class="list-group mb-3">
+  <div *ngFor="let user of users.Items">
+    <a class="list-group-item list-group-item-action d-flex align-items-center" href="/">
+      <img src="https://github.com/mdo.png" width="32" height="32" class="rounded me-2" loading="lazy">
+      <span><strong>{{user.DisplayName}}</strong> <a href="mailto:{{user.EmailAddress}}">{{user.EmailAddress}}</a></span>
+    </a>
+  </div>
+</div>
 
-  <p><a href="mailto:{{user.EmailAddress}}">{{user.EmailAddress}}</a></p>
-  <img src="{{user.Links.Avatar}}" /> 
+<!--<img src="{{user.Links.Avatar}}" />-->
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faEnvelope, faShare } from '@fortawesome/free-solid-svg-icons';
 import { OctopusDeployService } from "../../../../core/services/octopus-deploy.api.service";
 
 @Component({
@@ -6,6 +7,9 @@ import { OctopusDeployService } from "../../../../core/services/octopus-deploy.a
   templateUrl: './teams.component.html'
 })
 export class TeamsComponent implements OnInit {
+  faShare = faShare;
+  faEnvelope = faEnvelope;
+
   teams: any;
 
   constructor(private service: OctopusDeployService) { }

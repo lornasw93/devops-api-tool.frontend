@@ -1,13 +1,16 @@
-<h1>Projects ({{projects.TotalResults}})</h1>
-
-<ag-grid-angular style="width: 500px; height: 150px;"
-                 class="ag-theme-material"
-                 [rowData]="rowData"
-                 [columnDefs]="columnDefs">
-</ag-grid-angular>
-
-<div *ngFor="let project of projects.Items">
-  <h4>{{project.Name}}</h4>
-  <p>{{project.Description}}</p>
-  <p>Auto create release: {{project.AutoCreateRelease}}</p>
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1>Projects ({{projects.TotalResults}})</h1> 
+  </div>
+</div>
+ 
+<div class="container">
+  <div class="list-group mb-3">
+    <div *ngFor="let project of projects.Items">
+      <a class="list-group-item list-group-item-action d-flex align-items-center"  [routerLink]="['/octopusdeploy/projects/{{project.Id}}']">
+        <img src="https://github.com/mdo.png" width="32" height="32" class="rounded me-2" loading="lazy">
+        <span><strong>{{project.Name}}</strong> {{project.Description}} Creates auto release: {{project.AutoCreateRelease}}</span>
+      </a>
+    </div>
+  </div> 
 </div>

@@ -19,7 +19,6 @@ import { DateAgoPipe } from "../core/pipes/date-ago.pipe";
 import { BitbucketModule } from "./modules/bitbucket/bitbucket.module";
 import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.module";
 import { AccountModule } from "./modules/account/account.module";
-import { SearchComponent } from "./modules/shared/components/search/search.component";
 
 @NgModule({
   declarations: [
@@ -28,9 +27,8 @@ import { SearchComponent } from "./modules/shared/components/search/search.compo
     FooterComponent,
     HomeComponent,
     PageNotFoundComponent,
-    DateAgoPipe,
-    SearchComponent
-  ],
+    DateAgoPipe, 
+],
   imports: [
     CommonModule,
     BrowserModule,

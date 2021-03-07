@@ -30,7 +30,7 @@ import { UsersComponent } from "./users/users.component";
     ProjectsComponent,
     ReleasesComponent,
     TeamsComponent,
-    UsersComponent
+    UsersComponent,
   ],
   imports: [
     CommonModule,
