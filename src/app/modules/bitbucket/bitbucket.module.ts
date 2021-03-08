@@ -1,9 +1,9 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BitbucketRoutingModule } from "./bitbucket.routing.module";
+import { BitbucketComponent } from "./bitbucket/bitbucket.component";
 import { PullRequestComponent } from "./pull-request/pull-request.component";
 import { PullRequestsComponent } from "./pull-requests/pull-requests.component";
-import { BitbucketComponent } from "./bitbucket/bitbucket.component";
 
 @NgModule({
   declarations: [
@@ -15,7 +15,6 @@ import { BitbucketComponent } from "./bitbucket/bitbucket.component";
     CommonModule,
     BitbucketRoutingModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [DatePipe]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class BitbucketModule { }

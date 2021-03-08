@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
-import { TeamCityRoutingModule } from "./team-city.routing.module";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TeamCityComponent } from "./team-city/team-city.component";
-import { BuildComponent } from "./build/build.component";
-import { BuildQueueComponent } from "./build-queue/build-queue.component";
-import { ProjectsComponent } from './projects/projects.component';
-import { ProjectComponent } from './project/project.component';
-import { BuildsComponent } from './builds/builds.component';
 import { PageHeaderComponent } from "../shared/components/page-header/page-header.component";
+import { BuildQueueComponent } from "./build-queue/build-queue.component";
+import { BuildComponent } from "./build/build.component";
+import { BuildsComponent } from './builds/builds.component';
+import { ProjectComponent } from './project/project.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { TeamCityRoutingModule } from "./team-city.routing.module";
+import { TeamCityComponent } from "./team-city/team-city.component";
 
 @NgModule({
   declarations: [
@@ -23,9 +23,9 @@ import { PageHeaderComponent } from "../shared/components/page-header/page-heade
   imports: [
     CommonModule,
     TeamCityRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
-  providers: [DatePipe]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TeamCityModule { }
 
