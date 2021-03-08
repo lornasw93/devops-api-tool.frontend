@@ -1,16 +1,22 @@
 <div class="container-fluid">
   <div class="jumbotron">
-    <h1>Projects ({{projects.TotalResults}})</h1> 
+    <h1>Projects ({{projectsCount}})</h1>
   </div>
 </div>
- 
 <div class="container">
-  <div class="list-group mb-3">
-    <div *ngFor="let project of projects.Items">
-      <a class="list-group-item list-group-item-action d-flex align-items-center"  [routerLink]="['/octopusdeploy/projects/{{project.Id}}']">
-        <img src="https://github.com/mdo.png" width="32" height="32" class="rounded me-2" loading="lazy">
-        <span><strong>{{project.Name}}</strong> {{project.Description}} Creates auto release: {{project.AutoCreateRelease}}</span>
-      </a>
-    </div>
-  </div> 
+  <div *ngIf="projects != null; else noResults"> 
+    <ag-grid-angular class="ag-theme-material"
+                     style="width: 100%; height: 900px;"
+                     [columnDefs]="columnDefs"
+                     [defaultColDef]="defaultColDef" 
+                     [rowData]="projects" 
+                     animateRows="true"
+                     [frameworkComponents]="frameworkComponents"
+                     enableCharts="true"
+                     (gridReady)="onGridReady($event)">
+    </ag-grid-angular>
+  </div>
+  <ng-template #noResults>
+    <p>No projects to load</p>
+  </ng-template>
 </div>

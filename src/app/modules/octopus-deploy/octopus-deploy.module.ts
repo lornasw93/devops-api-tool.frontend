@@ -15,6 +15,7 @@ import { ProjectGroupsComponent } from "./project-groups/project-groups.componen
 import { ProjectsComponent } from "./projects/projects.component";
 import { ReleasesComponent } from "./releases/releases.component";
 import { UsersComponent } from "./users/users.component";
+import { AgGridModule } from "ag-grid-angular";
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UsersComponent } from "./users/users.component";
   ],
   imports: [
     CommonModule,
+    AgGridModule.withComponents([]),
     OctopusDeployRoutingModule,
     FontAwesomeModule
   ],

@@ -19,6 +19,7 @@ import { DateAgoPipe } from "../core/pipes/date-ago.pipe";
 import { BitbucketModule } from "./modules/bitbucket/bitbucket.module";
 import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.module";
 import { AccountModule } from "./modules/account/account.module";
+import { StatusCellRendererComponent } from "./modules/shared/components/status-cell-renderer/status-cell-renderer.component";
 
 @NgModule({
   declarations: [
@@ -27,14 +28,15 @@ import { AccountModule } from "./modules/account/account.module";
     FooterComponent,
     HomeComponent,
     PageNotFoundComponent,
-    DateAgoPipe, 
-],
+    DateAgoPipe,
+    StatusCellRendererComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AgGridModule.withComponents([]),
+    //AgGridModule.withComponents([]),
     FontAwesomeModule,
     NgxChartsModule,
     BrowserAnimationsModule,
@@ -45,10 +47,9 @@ import { AccountModule } from "./modules/account/account.module";
     BitbucketModule,
     OctopusDeployModule,
     AccountModule
-  ], 
-  providers: [
-    NgxChartsModule, DatePipe
   ],
+  providers: [NgxChartsModule, DatePipe],
+  entryComponents: [StatusCellRendererComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
