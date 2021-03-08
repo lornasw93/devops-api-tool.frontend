@@ -14,6 +14,7 @@ import { ProjectGroupsComponent } from "./project-groups/project-groups.componen
 import { ProjectsComponent } from "./projects/projects.component";
 import { ReleasesComponent } from "./releases/releases.component";
 import { UsersComponent } from "./users/users.component";
+import { ProjectComponent } from "./project/project.component";
 
 const octopusDeployRoutes: Routes = [
   { path: '', component: OctopusDeployComponent },
@@ -26,6 +27,7 @@ const octopusDeployRoutes: Routes = [
   { path: 'interruptions', component: InterruptionsComponent },
   { path: 'machines', component: MachinesComponent },
   { path: 'project-groups', component: ProjectGroupsComponent },
+  { path: 'projects/:id', component: ProjectComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'releases', component: ReleasesComponent },
   { path: 'teams', component: TeamsComponent },

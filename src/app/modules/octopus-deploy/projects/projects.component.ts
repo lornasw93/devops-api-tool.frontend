@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OctopusDeployService } from "../../../../core/services/octopus-deploy.api.service";
 import { StatusCellRendererComponent } from "../../shared/components/status-cell-renderer/status-cell-renderer.component";
+import { ProjectListActionsComponent } from "../../shared/components/project-list-actions/project-list-actions.component";
 
 @Component({
   selector: 'app-projects',
@@ -21,7 +22,7 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.service.getProjects().subscribe((data: any) => {
       this.projectsCount = data.TotalResults;
-      this.projects = data.Items;
+      this.projects = data.Items.sort((a, b) => a.Name.localeCompare(b.Name)); 
     });
 
     this.frameworkComponents = {
@@ -33,10 +34,9 @@ export class ProjectsComponent implements OnInit {
       {
         headerName: 'Name',
         field: 'Name',
-        width: 135,
-        cellRenderer(params) {
-          return `<a href="https://cascadeengineering.octopus.app${params.data.Links.Web}" target="_blank" rel="noopener">${params.value}</a>`;
-        }
+        //cellRenderer(params) {
+        //  return `<a href="http://localhost:420cascadeengineering.octopus.app${params.data.Links.Web}" target="_blank" rel="noopener">${params.value}</a>`;
+        //}
       },
       { headerName: 'Description', field: 'Description', width: 175 },
       {
@@ -44,22 +44,31 @@ export class ProjectsComponent implements OnInit {
         field: 'AutoCreateRelease',
         width: 160,
         cellRendererFramework: StatusCellRendererComponent
+      },
+      {
+        headerName: '',
+        field: 'Id',
+        resizable: false,
+        colId: 'buttons',
+        suppressSizeToFit: true,
+        cellClass: ['ag-cell-actions'],
+        cellRendererFramework: ProjectListActionsComponent,
       }
     ];
 
     this.defaultColDef = {
-      sortable: false,
+      sortable: true,
       resizable: true,
       filter: false,
       autoHeight: true,
-      rowSelection: 'single'
+      rowSelection: 'single',
     };
   }
 
   onGridReady(params) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
-
+     
     params.columnApi.autoSizeAllColumns();
   }
 }

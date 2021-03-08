@@ -2,14 +2,15 @@
   <div class="jumbotron">
     <h1>Projects ({{projectsCount}})</h1>
   </div>
+  <app-back-button></app-back-button>
 </div>
 <div class="container">
-  <div *ngIf="projects != null; else noResults"> 
+  <div *ngIf="projects != null; else noResults">
     <ag-grid-angular class="ag-theme-material"
-                     style="width: 100%; height: 900px;"
+                     style="width: 100%; height: 1200px;"
                      [columnDefs]="columnDefs"
-                     [defaultColDef]="defaultColDef" 
-                     [rowData]="projects" 
+                     [defaultColDef]="defaultColDef"
+                     [rowData]="projects"
                      animateRows="true"
                      [frameworkComponents]="frameworkComponents"
                      enableCharts="true"
@@ -19,4 +20,5 @@
   <ng-template #noResults>
     <p>No projects to load</p>
   </ng-template>
+
 </div>

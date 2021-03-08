@@ -19,7 +19,8 @@ import { DateAgoPipe } from "../core/pipes/date-ago.pipe";
 import { BitbucketModule } from "./modules/bitbucket/bitbucket.module";
 import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.module";
 import { AccountModule } from "./modules/account/account.module";
-import { StatusCellRendererComponent } from "./modules/shared/components/status-cell-renderer/status-cell-renderer.component";
+import { RoutingStateService } from "../core/services/routing-state.service";
+import { SharedModule } from "./modules/shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { StatusCellRendererComponent } from "./modules/shared/components/status-
     HomeComponent,
     PageNotFoundComponent,
     DateAgoPipe,
-    StatusCellRendererComponent,
+    RoutingStateService
   ],
   imports: [
     CommonModule,
@@ -42,14 +43,14 @@ import { StatusCellRendererComponent } from "./modules/shared/components/status-
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    SweetAlert2Module.forRoot(),
+    SweetAlert2Module.forRoot(), 
+    SharedModule,
     TeamCityModule,
     BitbucketModule,
     OctopusDeployModule,
-    AccountModule
+    AccountModule,
   ],
   providers: [NgxChartsModule, DatePipe],
-  entryComponents: [StatusCellRendererComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
