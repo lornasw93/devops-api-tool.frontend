@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BuildService } from "../../../../core/services/team-city/build.api.service";
+import { TeamCityApiService } from "../../../../core/services/team-city.api.service";
 
 @Component({
   selector: 'app-teamcity',
@@ -8,7 +8,7 @@ import { BuildService } from "../../../../core/services/team-city/build.api.serv
 export class TeamCityComponent implements OnInit {
   buildQueue: any;
 
-  constructor(private service: BuildService) { 
+  constructor(private service: TeamCityApiService) { 
   }
   
   ngOnInit(): void {

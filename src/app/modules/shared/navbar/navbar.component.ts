@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { faOctopusDeploy, faBitbucket } from '@fortawesome/free-brands-svg-icons';
-import { faHome, faHammer, faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Component } from '@angular/core';
+import { faBitbucket, faOctopusDeploy } from '@fortawesome/free-brands-svg-icons';
+import { faHammer, faHome, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',

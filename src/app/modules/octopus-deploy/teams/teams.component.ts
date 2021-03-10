@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faEnvelope, faShare } from '@fortawesome/free-solid-svg-icons';
-import { OctopusDeployService } from "../../../../core/services/octopus-deploy.api.service";
+import { OctopusDeployApiService } from "../../../../core/services/octopus-deploy.api.service";
 
 @Component({
   selector: 'app-teams',
@@ -12,7 +12,7 @@ export class TeamsComponent implements OnInit {
 
   teams: any;
 
-  constructor(private service: OctopusDeployService) { }
+  constructor(private service: OctopusDeployApiService) { }
 
   ngOnInit(): void {
     this.service.getTeams().subscribe((data: any[]) => {

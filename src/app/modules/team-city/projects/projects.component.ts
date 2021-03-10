@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService } from "../../../../core/services/team-city/project.api.service";
-import { groupBy, mapTo } from 'rxjs/operators';
+import { TeamCityApiService } from "../../../../core/services/team-city.api.service";
 
 @Component({
   selector: 'app-projects',
@@ -12,7 +11,7 @@ export class ProjectsComponent implements OnInit {
 
   newProjects: any[];
 
-  constructor(private service: ProjectService) {
+  constructor(private service: TeamCityApiService) {
   }
 
   ngOnInit(): void {

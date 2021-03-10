@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; 
 import { Observable } from 'rxjs';
-import { BaseApiService } from "../base.api.service";
+import { BaseApiService } from "./base.api.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class BuildService extends BaseApiService<object> {
+export class TeamCityApiService extends BaseApiService<object> {
+  resourceName = 'teamcity';
+
   constructor(private http: HttpClient) {
     super(http);
   }
@@ -22,5 +24,19 @@ export class BuildService extends BaseApiService<object> {
 
   getOverview(): Observable<any> {
     return this.getAll(`home-overview`);
+  }
+  
+  getProject(id) {
+    return this.get('teamcity-projects-id');
+    //return this.get(`projects/${id}`);
+  }
+
+  getProjects() {
+    return this.getAll('teamcity-projects');
+    //return this.getAll(`projects`);
+  }
+
+  getProjectsBuildTypes() {
+    return this.getAll('teamcity-build-types-with-project-details');
   }
 }

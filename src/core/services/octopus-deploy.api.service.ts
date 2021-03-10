@@ -5,7 +5,7 @@ import { BaseApiService } from "./base.api.service";
 @Injectable({
   providedIn: 'root'
 })
-export class OctopusDeployService extends BaseApiService<object> {
+export class OctopusDeployApiService extends BaseApiService<object> {
   resourceName = 'octopusdeploy';
 
   constructor(private http: HttpClient) {
@@ -13,7 +13,7 @@ export class OctopusDeployService extends BaseApiService<object> {
   }
 
   getDeployments() {
-    return this.getAll(`octopusdeploy-deployments`);
+    return this.getAll(`deployments`);
   }
 
   getTeams() {

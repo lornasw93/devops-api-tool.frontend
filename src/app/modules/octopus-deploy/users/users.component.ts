@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { OctopusDeployService } from "../../../../core/services/octopus-deploy.api.service";
+import { OctopusDeployApiService } from "../../../../core/services/octopus-deploy.api.service";
 
 @Component({
   selector: 'app-users',
@@ -9,7 +9,7 @@ import { OctopusDeployService } from "../../../../core/services/octopus-deploy.a
 export class UsersComponent implements OnInit {
   users: any;
 
-  constructor(private service: OctopusDeployService) { }
+  constructor(private service: OctopusDeployApiService) { }
 
   ngOnInit(): void { 
     this.service.getUsers().subscribe((data: any[]) => {

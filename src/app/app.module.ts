@@ -1,27 +1,31 @@
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { AgGridModule } from 'ag-grid-angular';
-import { BaseApiService } from 'src/core/services/base.api.service';
-import { OctopusDeployService } from 'src/core/services/octopus-deploy.api.service';
-import { RoutingStateService } from 'src/core/services/routing-state.service';
-import { BuildService } from 'src/core/services/team-city/build.api.service';
-import { ProjectService } from 'src/core/services/team-city/project.api.service';
+
+// Pipes
 import { DateAgoPipe } from "../core/pipes/date-ago.pipe";
+
+// Services
+import { OctopusDeployApiService } from 'src/core/services/octopus-deploy.api.service';
+import { RoutingStateService } from 'src/core/services/routing-state.service';
+import { TeamCityApiService } from 'src/core/services/team-city.api.service';
+
+// Components
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app.routing.module';
-import { AccountModule } from "./modules/account/account.module";
-import { BitbucketModule } from "./modules/bitbucket/bitbucket.module";
 import { HomeComponent } from "./modules/home/home.component";
-import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.module";
+
+// Modules
 import { SharedModule } from "./modules/shared/shared.module";
+import { OctopusDeployModule } from "./modules/octopus-deploy/octopus-deploy.module";
 import { TeamCityModule } from "./modules/team-city/team-city.module";
+import { AppRoutingModule } from './app.routing.module';
+import { BitbucketModule } from "./modules/bitbucket/bitbucket.module";
+
 
 @NgModule({
   declarations: [
@@ -30,32 +34,29 @@ import { TeamCityModule } from "./modules/team-city/team-city.module";
     DateAgoPipe
   ],
   imports: [
-    CommonModule,
+    CommonModule, 
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AgGridModule.withComponents([]),
-    FontAwesomeModule,
+    SharedModule, 
     NgxChartsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    SweetAlert2Module.forRoot(),
-    SharedModule,
+    SweetAlert2Module.forRoot(), 
     TeamCityModule,
     BitbucketModule,
-    OctopusDeployModule,
-    AccountModule
+    OctopusDeployModule 
   ],
   // providers: [NgxChartsModule, DatePipe],
   providers: [
-    BaseApiService,
-    OctopusDeployService,
+    //BaseApiService,
+    OctopusDeployApiService,
     RoutingStateService,
-    BuildService,
-    ProjectService,
+    TeamCityApiService,
   ],
   bootstrap: [AppComponent],
-  exports: []
+  exports: [SharedModule,]
 })
 export class AppModule { }
+

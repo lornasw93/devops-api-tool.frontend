@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core'; 
+import { NgModule } from '@angular/core';
+import { SharedModule } from "../shared/shared.module";
 import { BuildQueueComponent } from "./build-queue/build-queue.component";
 import { BuildComponent } from "./build/build.component";
 import { BuildsComponent } from './builds/builds.component';
@@ -15,11 +16,12 @@ import { TeamCityComponent } from "./team-city/team-city.component";
     BuildQueueComponent,
     ProjectsComponent,
     ProjectComponent,
-    BuildsComponent
+    BuildsComponent,
   ],
   imports: [
     CommonModule,
-    TeamCityRoutingModule 
+    TeamCityRoutingModule,
+    SharedModule
   ]
 })
 export class TeamCityModule { }

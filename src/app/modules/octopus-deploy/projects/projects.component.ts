@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OctopusDeployService } from "../../../../core/services/octopus-deploy.api.service";
+import { OctopusDeployApiService } from "../../../../core/services/octopus-deploy.api.service";
 import { StatusCellRendererComponent } from "../../shared/components/status-cell-renderer/status-cell-renderer.component";
 import { ProjectListActionsComponent } from "../../shared/components/project-list-actions/project-list-actions.component";
 
@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
   defaultColDef;
   frameworkComponents;
 
-  constructor(private service: OctopusDeployService) { }
+  constructor(private service: OctopusDeployApiService) { }
 
   ngOnInit(): void {
     this.service.getProjects().subscribe((data: any) => {

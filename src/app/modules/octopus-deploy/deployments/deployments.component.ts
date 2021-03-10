@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { faUser, faCalendar } from '@fortawesome/free-solid-svg-icons';
-import { OctopusDeployService } from "../../../../core/services/octopus-deploy.api.service";
+import { OctopusDeployApiService } from "../../../../core/services/octopus-deploy.api.service";
 
 @Component({
   selector: 'app-deployments',
   templateUrl: './deployments.component.html'
 })
 export class DeploymentsComponent implements OnInit {
-  deployments: any;
+  deployments: any[];
   deploymentsCount: number;
 
   gridApi;
@@ -15,11 +14,11 @@ export class DeploymentsComponent implements OnInit {
   columnDefs;
   defaultColDef;
 
-  constructor(private service: OctopusDeployService) { }
+  constructor(private service: OctopusDeployApiService) { }
 
   ngOnInit(): void {
     this.service.getDeployments().subscribe((data: any) => {
-      this.deployments = data;
+      this.deployments = data.Items;
       this.deploymentsCount = data.TotalResults;
 
       console.log(data);
@@ -27,7 +26,14 @@ export class DeploymentsComponent implements OnInit {
 
     this.columnDefs = [
       { field: 'Id', hide: true },
-     // { headerName: 'Description', field: 'Description', width: 175 },
+      { field: 'ProjectId', hide: true },
+      { field: 'DeployedById', hide: true },
+      { field: 'ReleaseId', hide: true },
+      { field: 'Name' },
+      { field: 'FailureEncountered' },
+      { field: 'Created' },
+      { field: 'DeployedBy' },
+      { field: 'Created' },
     ];
 
     this.defaultColDef = {
@@ -38,7 +44,7 @@ export class DeploymentsComponent implements OnInit {
       rowSelection: 'single',
     };
   }
-   
+
   onGridReady(params) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;

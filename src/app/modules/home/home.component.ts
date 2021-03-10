@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { faCheck, faSync, faExclamation, faTimes, faEye } from '@fortawesome/free-solid-svg-icons';
-import { BuildService } from "../../../core/services/team-city/build.api.service";
 
 @Component({
   selector: 'app-home',
@@ -33,8 +32,7 @@ export class HomeComponent implements OnInit {
     domain: ['#198754', '#dc3545', '#6c757d']
   };
 
-  constructor(private service: BuildService) {
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }

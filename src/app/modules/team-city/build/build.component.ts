@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { BuildService } from "../../../../core/services/team-city/build.api.service";
+import { TeamCityApiService } from 'src/core/services/team-city.api.service';
 
 @Component({
   selector: 'app-build',
@@ -18,7 +18,7 @@ export class BuildComponent implements OnInit {
   statusColor: string;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private service: BuildService) {
+    private service: TeamCityApiService) {
     this.id = this.activatedRoute.snapshot.params.id;
   }
 

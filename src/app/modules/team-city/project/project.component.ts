@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router/router";
-import { ProjectService } from "../../../../core/services/team-city/project.api.service";
+import { TeamCityApiService } from "../../../../core/services/team-city.api.service";
 
 @Component({
   selector: 'app-project',
@@ -11,7 +11,8 @@ export class ProjectComponent implements OnInit {
   project: any;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private service: ProjectService) {
+    private service: TeamCityApiService
+  ) {
     this.id = this.activatedRoute.snapshot.params.id;
   }
 

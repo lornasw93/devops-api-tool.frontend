@@ -1,17 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BackButtonComponent } from './back-button.component';
+import { RoutingStateService } from "../../../../../core/services/routing-state.service";
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('BackButtonComponent', () => {
   let component: BackButtonComponent;
   let fixture: ComponentFixture<BackButtonComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ BackButtonComponent ]
-    })
-    .compileComponents();
-  });
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+        imports: [RouterTestingModule],
+        declarations: [BackButtonComponent],
+        providers: [RoutingStateService]
+      })
+      .compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(BackButtonComponent);

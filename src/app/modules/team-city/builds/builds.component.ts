@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BuildService } from "../../../../core/services/team-city/build.api.service";
+import { TeamCityApiService } from "../../../../core/services/team-city.api.service";
 
 @Component({
   selector: 'app-builds',
@@ -10,7 +10,7 @@ export class BuildsComponent implements OnInit {
   builds: any[];
 
 
-  constructor(private service: BuildService) { }
+  constructor(private service: TeamCityApiService) { }
 
   ngOnInit(): void { 
     //this.service.getLatest10Builds().subscribe((data: any) => {

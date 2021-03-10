@@ -15,12 +15,12 @@ export abstract class BaseApiService<T> {
 
   get(url): Observable<T> {
     console.log(`GET: ${url}`);
-    return this.httpClient.get<T>(`${this.baseUrl}/${this.resourceName}/${url}`);
+    return this.httpClient.get<T>(`${this.baseUrl}/${this.resourceName}-${url}`);
   }
 
   getAll(url): Observable<T[]> {
     console.log(`GET ALL: ${url}`);
-    return this.httpClient.get<T[]>(`${this.baseUrl}/${url}`);
+    return this.httpClient.get<T[]>(`${this.baseUrl}/${this.resourceName}-${url}`);
   }
 
   getCount(url): Observable<number> {

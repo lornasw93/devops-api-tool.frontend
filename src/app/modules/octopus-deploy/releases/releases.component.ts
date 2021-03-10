@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OctopusDeployService } from "../../../../core/services/octopus-deploy.api.service";
+import { OctopusDeployApiService } from "../../../../core/services/octopus-deploy.api.service";
 
 @Component({
   selector: 'app-releases',
@@ -8,7 +8,7 @@ import { OctopusDeployService } from "../../../../core/services/octopus-deploy.a
 export class ReleasesComponent implements OnInit {
   releases: any;
 
-  constructor(private service: OctopusDeployService) { }
+  constructor(private service: OctopusDeployApiService) { }
 
   ngOnInit(): void {
     this.service.getReleases().subscribe((data: any[]) => {
