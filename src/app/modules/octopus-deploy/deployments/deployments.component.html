@@ -1,27 +1,22 @@
 <div class="container-fluid">
   <div class="jumbotron">
-    <h1>Deployments ({{deployments.Items.length}})</h1>
+    <h1>Deployments ({{deploymentsCount}})</h1>
   </div>
+  <!--<app-back-button></app-back-button>-->
 </div>
-
-<div class="container">  
-  <p>Total Count: {{deployments.TotalResults}}</p>
-   
-  <div *ngFor="let deployment of deployments.Items">
-    <h4>{{deployment.Name}}</h4>
-
-    <p>By {{deployment.DeployedBy}} @ {{deployment.Created | date}}</p>
-
-    <div *ngFor="let change of deployment.Changes">
-      <div *ngFor="let buildInfo of change.BuildInformation">
-        <p><strong>Build Info</strong></p>
-        <p><a href="{{buildInfo.BuildUrl}}">[{{buildInfo.BuildNumber}}]</a> Branch: {{buildInfo.Branch}}</p>
-      </div>
-
-      <div *ngFor="let workItem of change.WorkItems">
-        <p><strong>Work Items</strong></p>
-        <p><a href="{{workItem.LinkUrl}}">[{{workItem.Id}}]</a> {{workItem.Description}}</p>
-      </div>
-    </div>
+<div class="container">
+  <div *ngIf="deployments != null; else noResults">
+    <ag-grid-angular class="ag-theme-material"
+                     style="width: 100%; height: 1200px;"
+                     [columnDefs]="columnDefs"
+                     [defaultColDef]="defaultColDef"
+                     [rowData]="deployments"
+                     animateRows="true"
+                     enableCharts="true"
+                     (gridReady)="onGridReady($event)">
+    </ag-grid-angular>
   </div>
+  <ng-template #noResults>
+    <p>No deployments to load</p>
+  </ng-template>
 </div>

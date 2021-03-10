@@ -6,6 +6,7 @@ import { BaseApiService } from "./base.api.service";
   providedIn: 'root'
 })
 export class OctopusDeployService extends BaseApiService<object> {
+  resourceName = 'octopusdeploy';
 
   constructor(private http: HttpClient) {
     super(http);

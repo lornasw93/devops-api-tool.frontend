@@ -1,7 +1,5 @@
-import { CommonModule, DatePipe } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PageHeaderComponent } from "../shared/components/page-header/page-header.component";
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core'; 
 import { BuildQueueComponent } from "./build-queue/build-queue.component";
 import { BuildComponent } from "./build/build.component";
 import { BuildsComponent } from './builds/builds.component';
@@ -17,15 +15,12 @@ import { TeamCityComponent } from "./team-city/team-city.component";
     BuildQueueComponent,
     ProjectsComponent,
     ProjectComponent,
-    BuildsComponent,
-    PageHeaderComponent
+    BuildsComponent
   ],
   imports: [
     CommonModule,
-    TeamCityRoutingModule,
-    FontAwesomeModule,
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    TeamCityRoutingModule 
+  ]
 })
 export class TeamCityModule { }
 

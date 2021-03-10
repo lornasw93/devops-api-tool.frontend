@@ -9,11 +9,13 @@ export abstract class BaseApiService<T> {
   //baseUrl = 'http://localhost:3000/api';
   baseUrl = 'http://localhost:3000';
 
+  protected abstract resourceName: string;
+
   protected constructor(protected httpClient: HttpClient) { }
 
   get(url): Observable<T> {
     console.log(`GET: ${url}`);
-    return this.httpClient.get<T>(`${this.baseUrl}/${url}`);
+    return this.httpClient.get<T>(`${this.baseUrl}/${this.resourceName}/${url}`);
   }
 
   getAll(url): Observable<T[]> {

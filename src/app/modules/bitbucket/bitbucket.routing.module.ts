@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from "../shared/page-not-found/page-not-found.component"; 
+import { RouterModule, Routes } from '@angular/router';
 import { BitbucketComponent } from "./bitbucket/bitbucket.component";
-import { PullRequestsComponent } from "./pull-requests/pull-requests.component";
 import { PullRequestComponent } from "./pull-request/pull-request.component";
+import { PullRequestsComponent } from "./pull-requests/pull-requests.component";
 
 const bitbucketRoutes: Routes = [
   { path: '', component: BitbucketComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'pullrequests', component: PullRequestsComponent },
   { path: 'pullrequests/:id', component: PullRequestComponent },
-  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

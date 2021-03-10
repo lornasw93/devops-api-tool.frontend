@@ -8,26 +8,41 @@ import { OctopusDeployService } from "../../../../core/services/octopus-deploy.a
 })
 export class DeploymentsComponent implements OnInit {
   deployments: any;
+  deploymentsCount: number;
 
-  columnDefs = [
-    { headerName: 'Make', field: 'make' },
-    { headerName: 'Model', field: 'model' },
-    { headerName: 'Price', field: 'price' }
-  ];
-
-  rowData = [
-    { make: 'Toyota', model: 'Celica', price: 35000 },
-    { make: 'Ford', model: 'Mondeo', price: 32000 },
-    { make: 'Porsche', model: 'Boxter', price: 72000 }
-  ];
+  gridApi;
+  gridColumnApi;
+  columnDefs;
+  defaultColDef;
 
   constructor(private service: OctopusDeployService) { }
 
   ngOnInit(): void {
-    this.service.getDeployments().subscribe((data: any[]) => {
+    this.service.getDeployments().subscribe((data: any) => {
       this.deployments = data;
+      this.deploymentsCount = data.TotalResults;
 
       console.log(data);
     });
+
+    this.columnDefs = [
+      { field: 'Id', hide: true },
+     // { headerName: 'Description', field: 'Description', width: 175 },
+    ];
+
+    this.defaultColDef = {
+      sortable: true,
+      resizable: true,
+      filter: false,
+      autoHeight: true,
+      rowSelection: 'single',
+    };
+  }
+   
+  onGridReady(params) {
+    this.gridApi = params.api;
+    this.gridColumnApi = params.columnApi;
+
+    params.columnApi.autoSizeAllColumns();
   }
 }

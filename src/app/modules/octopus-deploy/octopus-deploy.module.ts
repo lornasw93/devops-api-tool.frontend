@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BuildInfosComponent } from "./build-infos/build-infos.component";
 import { DeploymentProcessesComponent } from "./deployment-processes/deployment-processes.component";
 import { DeploymentComponent } from "./deployment/deployment.component";
@@ -36,7 +36,6 @@ import { UsersComponent } from "./users/users.component";
   imports: [
     CommonModule, 
     OctopusDeployRoutingModule
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  ]
 })
 export class OctopusDeployModule { }
