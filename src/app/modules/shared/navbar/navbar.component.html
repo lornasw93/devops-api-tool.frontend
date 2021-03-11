@@ -1,39 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <a class="navbar-brand" href="#">DevOps API Tool</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="main_nav">
-    <ul class="navbar-nav">
-      <li class="nav-item active"><a class="nav-link" [routerLink]="['/']"><fa-icon [icon]="faHome"></fa-icon></a></li>
-      <li class="nav-item"><a class="nav-link" [routerLink]="['/bitbucket']">Bitbucket</a></li>
-      <li class="nav-item"><a class="nav-link" [routerLink]="['/teamcity']">Team City</a></li>
-      <li class="nav-item dropdown">
-        <a class="nav-link  dropdown-toggle" [routerLink]="['/octopusdeploy']" data-toggle="dropdown">Octopus Deploy</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/build-infos']">Build Infos</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/deployments']">Deployments</a></li>
-          <!--<li><a class="dropdown-item" [routerLink]="['/octopusdeploy/deployments/Deployments-38825']">Deployment (by Id)</a></li>-->
-          <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/deployment-processes']">Deployment Processes</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/environments']">Environments</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/interruptions']">Interruptions</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/machines']">Machines</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/projects']">Projects</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/project-groups']">Project Groups</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/releases']">Releases</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/teams']">Teams</a></li>
-          <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/users']">Users</a></li>
-        </ul>
-      </li>
+<ul>
+  <li><a [routerLink]="['/']">
+      <fa-icon [icon]="faHome"></fa-icon>
+    </a></li>
+  <li><a [routerLink]="['/bitbucket']">Bitbucket</a></li>
+  <li><a [routerLink]="['/teamcity']">Team City</a></li>
+  <li>
+    <a [routerLink]="['/octopusdeploy']" data-toggle="dropdown">Octopus Deploy</a>
+    <ul>
+      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/build-infos']">Build Infos</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/deployments']">Deployments</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/deployment-processes']">Deployment Processes</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/environments']">Environments</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/interruptions']">Interruptions</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/machines']">Machines</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/projects']">Projects</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/project-groups']">Project Groups</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/releases']">Releases</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/teams']">Teams</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/users']">Users</a></li>
     </ul>
-    <ul class="navbar-nav ml-auto">
-      <!--<li class="nav-item"><a class="nav-link" [routerLink]="['/']"><fa-icon [icon]="faUser"></fa-icon></a></li>-->
-      <li class="nav-item dropdown">
-        <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown"><fa-icon [icon]="faUser"></fa-icon></a>
-        <ul class="dropdown-menu dropdown-menu-right">
-          <li><a class="dropdown-item" href="#">Logout</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
+  </li>
+</ul>
+<ul>
+  <li><a [routerLink]="['/']">
+      <fa-icon [icon]="faUser"></fa-icon>
+    </a></li>
+</ul>
+
+<!-- 
+<ul>
+  <li><a>Projects</a></li>
+  <li><a>Tests</a></li> 
+  <li><a>Builds</a></li>
+  <li><a>Pull Requests</a></li>
+  <li><a>Deployments</a></li>
+  <li><a>Releases</a></li>
+  <li><a>Teams/Users</a></li>
+</ul> -->
