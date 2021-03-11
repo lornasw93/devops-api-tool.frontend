@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { AgGridModule } from 'ag-grid-angular';
 import { BuildInfosComponent } from "./build-infos/build-infos.component";
 import { DeploymentProcessesComponent } from "./deployment-processes/deployment-processes.component";
 import { DeploymentComponent } from "./deployment/deployment.component";
@@ -35,7 +36,8 @@ import { UsersComponent } from "./users/users.component";
   ],
   imports: [
     CommonModule, 
-    OctopusDeployRoutingModule
+    OctopusDeployRoutingModule,
+    AgGridModule
   ],
 
 })

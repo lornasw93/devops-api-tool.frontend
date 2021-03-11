@@ -1,8 +1,7 @@
 <div class="container-fluid">
   <div class="jumbotron">
     <h1>Projects ({{projectsCount}})</h1>
-  </div>
-  <app-back-button></app-back-button>
+  </div> 
 </div>
 <div class="container">
   <div *ngIf="projects != null; else noResults">
@@ -21,3 +20,4 @@
     <p>No projects to load</p>
   </ng-template> 
 </div>
+ 

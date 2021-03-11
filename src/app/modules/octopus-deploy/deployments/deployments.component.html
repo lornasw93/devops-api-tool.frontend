@@ -1,8 +1,7 @@
 <div class="container-fluid">
   <div class="jumbotron">
     <h1>Deployments ({{deploymentsCount}})</h1>
-  </div>
-  <!--<app-back-button></app-back-button>-->
+  </div> 
 </div>
 <div class="container">
   <div *ngIf="deployments != null; else noResults">
@@ -20,3 +19,4 @@
     <p>No deployments to load</p>
   </ng-template>
 </div>
+ 

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { AgGridModule } from 'ag-grid-angular';
 import { SharedModule } from "../shared/shared.module";
 import { BuildQueueComponent } from "./build-queue/build-queue.component";
 import { BuildComponent } from "./build/build.component";
@@ -21,7 +22,8 @@ import { TeamCityComponent } from "./team-city/team-city.component";
   imports: [
     CommonModule,
     TeamCityRoutingModule,
-    SharedModule
+    SharedModule,
+    AgGridModule
   ]
 })
 export class TeamCityModule { }
