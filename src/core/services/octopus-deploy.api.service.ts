@@ -17,22 +17,22 @@ export class OctopusDeployApiService extends BaseApiService<object> {
   }
 
   getTeams() {
-    return this.getAll(`octopusdeploy-teams`);
+    return this.getAll(`teams`);
   }
 
   getUsers() {
-    return this.getAll(`octopusdeploy-users`);
+    return this.getAll(`users`);
   }
 
   getProjects() {
-    return this.getAll(`octopusdeploy-projects`);
+    return this.getAll(`projects`);
   }
 
   getReleases() {
-    return this.getAll(`octopusdeploy-releases`);
+    return this.getAll(`releases`);
   }
 
   getEnvironments() {
-    return this.getAll(`octopusdeploy-environments`);
+    return this.getAll(`environments`);
   }
 }

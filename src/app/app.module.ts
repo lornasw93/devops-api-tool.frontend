@@ -26,7 +26,6 @@ import { TeamCityModule } from "./modules/team-city/team-city.module";
 import { AppRoutingModule } from './app.routing.module';
 import { BitbucketModule } from "./modules/bitbucket/bitbucket.module";
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,34 +1,14 @@
-<div class="container-fluid">
-  <div class="jumbotron">
-    <h1>Teams ({{teams.TotalResults}})</h1>
-  </div>
+ <div class="jumbotron jumbotron-fluid text-center">
+  <h1><span>Teams ({{teams.TotalResults}})</span></h1>
+  <!-- <h1 class="display-4">Fluid jumbotron</h1>
+  <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
 </div>
 
-<!--<section class="mentors-wrapper" data-testid="mentors-wrapper">
-  <div class="mentors-cards"> 
-    <div *ngFor="let team of teams.Items">  
-      <div class="card" aria-label="Mentor card" data-testid="mentor-card">
-        <div class="header">
-          <button class="avatar">
-            <img src="https://s.gravatar.com/avatar/676f210d1e7e29036e1b2bbd49da6c81?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fan.png" aria-labelledby="5d5fe0ae6e79126200d497bf" alt="Anshul Bansal">
-          </button>
-        </div>
-        <div>
-          <h2 class="name" id="5d5fe0ae6e79126200d497bf">{{team.Name}}</h2>
-          <p class="description">{{team.Description}}</p>
-        </div>
-        <div class="tags">
-        </div>
-        <div class="wave"></div>
-        <div class="channels">
-          <div class="channel-inner">
-            <a href="obfuscated">
-              <div class="icon"><fa-icon [icon]="faShare"></fa-icon></div>
-              <p class="type">Members ({{team.MemberUserIds.length}})</p>
-            </a> 
-          </div>
-        </div>
-      </div>
-    </div>
+ 
+<div class="container"> 
+  <div *ngFor="let team of teams.Items">
+    <h3>{{team.Name}}</h3>
+    <p>{{team.Description}}</p>
+    <p>Members ({{team.MemberUserIds.length}})</p>
   </div>
-</section>-->
+</div>

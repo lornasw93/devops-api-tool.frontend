@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AgGridModule } from 'ag-grid-angular';
+import { PageHeaderComponent } from '../shared/components/page-header/page-header.component';
 import { BuildInfosComponent } from "./build-infos/build-infos.component";
 import { DeploymentProcessesComponent } from "./deployment-processes/deployment-processes.component";
 import { DeploymentComponent } from "./deployment/deployment.component";
@@ -31,14 +32,14 @@ import { UsersComponent } from "./users/users.component";
     ProjectsComponent,
     ReleasesComponent,
     TeamsComponent,
-    UsersComponent,
+    UsersComponent,  
     ProjectComponent
   ],
   imports: [
     CommonModule, 
     OctopusDeployRoutingModule,
-    AgGridModule
-  ],
-
+    AgGridModule,  
+  ],  
+  exports:[ ]
 })
 export class OctopusDeployModule { }

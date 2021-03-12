@@ -1,13 +1,27 @@
-<h1>Releases ({{releases.Items.length}})</h1>
-<p>Total Results: {{releases.TotalResults}}</p>
+<div class="jumbotron jumbotron-fluid text-center">
+  <h1><span>Releases ({{releases.TotalResults}})</span></h1>
+</div>
 
 <div *ngFor="let release of releases.Items">
+  <h3><strong>{{release.Id}}</strong></h3>
+
   <p>{{release.Assembled | date}}</p>
 
   <p>Build info ({{release.BuildInformation.length}})</p>
-  
-  <p>Selected packages ({{release.SelectedPackages.length}})</p>
+  <div *ngIf="release.BuildInformation.length > 0">
+    <ul *ngFor="let buildInfo of release.BuildInformation">
+      <li>Build # {{buildInfo.BuildNumber}}</li>
+      <li>Commits {{buildInfo.Commits.length}}</li>
+      <li>Work Items {{buildInfo.WorkItems.length}}</li>
+    </ul>
+  </div>
 
-  <hr/>
+  <div *ngIf="release.SelectedPackages.length > 0">
+    <p><strong>Selected packages ({{release.SelectedPackages.length}})</strong></p>
 
+    <ul *ngFor="let package of release.SelectedPackages">
+      <li>{{package.ActionName}}</li>
+    </ul>
+  </div>
+  <hr />
 </div>

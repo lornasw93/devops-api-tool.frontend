@@ -1,87 +1,19 @@
-<!-- <app-page-header title="Builds ({{users.TotalResults}})" description=""></app-page-header> -->
+<div class="jumbotron jumbotron-fluid text-center">
+  <h1><span>Users  ({{users.TotalResults}})</span></h1>
+</div>
 
 <div class="container">
-<div class="list-group mb-3">
-  <div *ngFor="let user of users.Items">
-    <a class="list-group-item list-group-item-action d-flex align-items-center" href="/">
-      <img src="https://github.com/mdo.png" width="32" height="32" class="rounded me-2" loading="lazy">
-      <span><strong>{{user.DisplayName}}</strong> <a href="mailto:{{user.EmailAddress}}">{{user.EmailAddress}}</a></span>
-    </a>
+  <div *ngFor="let user of users.Items"> 
+    <img alt="image" class="img-fluid rounded-circle" src="../../../../assets/img/happy2.png">
+    <!-- <img alt="image" class="img-fluid rounded-circle" src="{{user.Links.Avatar}}"> -->
+    <h3><strong>{{user.DisplayName}}</strong></h3>
+    <p>
+      <a href="mailto:{{user.EmailAddress}}">{{user.EmailAddress}}</a>
+    </p>
+    <span *ngIf="!user.IsActive">
+      <p>Not Active</p>
+    </span>
+    <span *ngIf="user.IsService">
+      <p>Service account</p>
+    </span>
   </div>
-</div>
-
-<!--<img src="{{user.Links.Avatar}}" />-->
-</div>
-
-
-<section class="fdb-block team-5">
-  <div class="container">
-    <div class="row text-center justify-content-center">
-      <div class="col-8">
-        <h1>Meet Our Team</h1>
-      </div>
-    </div>
-
-    <div class="row-70"></div>
-
-    <div class="row text-center justify-content-center">
-      <div class="col-sm-2 m-sm-auto">
-        <img alt="image" class="img-fluid rounded-circle" src="./imgs/people/1.jpg">
-
-        <h3><strong>Sara Doe</strong></h3>
-        <p>"Wild Question Marks, but the Little Blind"</p>
-      </div>
-
-      <div class="col-sm-2 m-sm-auto">
-        <img alt="image" class="img-fluid rounded-circle" src="./imgs/people/6.jpg">
-
-        <h3><strong>Sara Doe</strong></h3>
-        <p>"Wild Question Marks, but the Little Blind"</p>
-      </div>
-
-      <div class="col-sm-2 m-sm-auto">
-        <img alt="image" class="img-fluid rounded-circle" src="./imgs/people/5.jpg">
-
-        <h3><strong>Sara Doe</strong></h3>
-        <p>"Wild Question Marks, but the Little Blind"</p>
-      </div>
-
-      <div class="col-sm-2 m-sm-auto">
-        <img alt="image" class="img-fluid rounded-circle" src="./imgs/people/8.jpg">
-
-        <h3><strong>Sara Doe</strong></h3>
-        <p>"Wild Question Marks, but the Little Blind"</p>
-      </div>
-    </div>
-
-    <div class="row justify-content-center text-center mt-5">
-      <div class="col-sm-2  m-sm-auto">
-        <img alt="image" class="img-fluid rounded-circle" src="./imgs/people/3.jpg">
-
-        <h3><strong>Sara Doe</strong></h3>
-        <p>"Wild Question Marks, but the Little Blind"</p>
-      </div>
-
-      <div class="col-sm-2 m-sm-auto">
-        <img alt="image" class="img-fluid rounded-circle" src="./imgs/people/9.jpg">
-
-        <h3><strong>Sara Doe</strong></h3>
-        <p>"Wild Question Marks, but the Little Blind"</p>
-      </div>
-
-      <div class="col-sm-2 m-sm-auto">
-        <img alt="image" class="img-fluid rounded-circle" src="./imgs/people/7.jpg">
-
-        <h3><strong>Sara Doe</strong></h3>
-        <p>"Wild Question Marks, but the Little Blind"</p>
-      </div>
-
-      <div class="col-sm-2 m-sm-auto">
-        <img alt="image" class="img-fluid rounded-circle" src="./imgs/people/2.jpg">
-
-        <h3><strong>Sara Doe</strong></h3>
-        <p>"Wild Question Marks, but the Little Blind"</p>
-      </div>
-    </div>
-  </div>
-</section>
