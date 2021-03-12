@@ -6,27 +6,42 @@ import { TeamCityApiService } from "../../../../core/services/team-city.api.serv
   templateUrl: './projects.component.html'
 })
 export class ProjectsComponent implements OnInit {
-  projects: any;
-  data: any;
+  rowData: any;
+  count: number;
 
-  newProjects: any[];
+  gridApi;
+  gridColumnApi;
 
   constructor(private service: TeamCityApiService) {
   }
 
   ngOnInit(): void {
     this.service.getProjects().subscribe((data: any) => {
-        this.projects = data.projects;
-      });
-
-    //this.service.getProjectsBuildTypes()
-    //  //.pipe(
-    //  //  groupBy(p => p.id),
-    //  //)
-    //  .subscribe((data: any) => {
-    //    this.data = data.buildType;
-
-    //    console.log(this.data);
-    //  });
+      this.rowData = data.projects.project;
+      this.count = data.projects.count; 
+    }); 
   }
+
+  onGridReady(params) {
+    this.gridApi = params.api;
+    this.gridColumnApi = params.columnApi;
+
+    params.columnApi.autoSizeAllColumns();
+  }
+
+  columnDefs = [
+    { field: 'id', hide: true },
+    { field: 'parentProjectId', hide: true },
+    { field: 'name' },
+    { field: 'description' },
+    { field: 'webUrl' }
+  ];
+
+  defaultColDef = {
+    sortable: true,
+    resizable: true,
+    filter: false,
+    autoHeight: true,
+    rowSelection: 'single',
+  }; 
 }

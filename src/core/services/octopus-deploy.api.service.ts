@@ -28,6 +28,10 @@ export class OctopusDeployApiService extends BaseApiService<object> {
     return this.getAll(`projects`);
   }
 
+  getProject(id) {
+    return this.getAll(`project-id`);
+  }
+
   getReleases() {
     return this.getAll(`releases`);
   }

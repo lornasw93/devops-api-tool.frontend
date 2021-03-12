@@ -14,12 +14,12 @@ export class TeamCityApiService extends BaseApiService<object> {
   }
 
   getBuild(id): Observable<any> {
-    return this.get(`teamcity-builds-id`);
+    return this.get(`builds-id`);
     //return this.get(`build/${id}`);
   }
     
   getBuildQueue(): Observable<any> {
-    return this.get(`teamcity-builds-queue`);
+    return this.get(`builds-queue`);
   }
 
   getOverview(): Observable<any> {
@@ -27,16 +27,16 @@ export class TeamCityApiService extends BaseApiService<object> {
   }
   
   getProject(id) {
-    return this.get('teamcity-projects-id');
+    return this.get('projects-id');
     //return this.get(`projects/${id}`);
   }
 
   getProjects() {
-    return this.getAll('teamcity-projects');
+    return this.getAll('projects');
     //return this.getAll(`projects`);
   }
 
   getProjectsBuildTypes() {
-    return this.getAll('teamcity-build-types-with-project-details');
+    return this.getAll('build-types-with-project-details');
   }
 }

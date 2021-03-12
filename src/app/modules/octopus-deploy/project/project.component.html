@@ -1,8 +1,10 @@
-<div class="container-fluid">
-  <div class="jumbotron">
-    <h1>Project ({{id}})</h1>
-  </div>
+<div class="jumbotron jumbotron-fluid text-center">
+  <h1>{{project.Name}}</h1>
+  <p>{{project.Description}}</p>
 </div>
-<div class="container">
-  
-</div>
+ 
+<p>Id: {{id}}</p>
+<p>Slug: {{project.Slug}}</p>
+<p>Auto Create Release: {{project.AutoCreateRelease}}</p>
+<!--<p>Deployment Process Id: {{project.DeploymentProcessId}}</p>
+<p>Is Disabled: {{project.IsDisabled}}</p>-->

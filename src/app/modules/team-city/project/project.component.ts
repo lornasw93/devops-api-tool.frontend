@@ -11,14 +11,13 @@ export class ProjectComponent implements OnInit {
   project: any;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private service: TeamCityApiService
-  ) {
+    private service: TeamCityApiService) {
     this.id = this.activatedRoute.snapshot.params.id;
   }
 
   ngOnInit(): void {
     this.service.getProject(this.id).subscribe((data: any) => {
-      this.project = data.project; 
+      this.project = data.project;
     });
   }
 }

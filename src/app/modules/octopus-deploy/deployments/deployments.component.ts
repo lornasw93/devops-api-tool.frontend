@@ -6,8 +6,8 @@ import { OctopusDeployApiService } from "../../../../core/services/octopus-deplo
   templateUrl: './deployments.component.html'
 })
 export class DeploymentsComponent implements OnInit {
-  deployments: any[];
-  deploymentsCount: number;
+  rowData: any[];
+  count: number;
 
   gridApi;
   gridColumnApi;
@@ -18,10 +18,8 @@ export class DeploymentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getDeployments().subscribe((data: any) => {
-      this.deployments = data.Items;
-      this.deploymentsCount = data.TotalResults;
-
-      console.log(data);
+      this.rowData = data.Items;
+      this.count = data.TotalResults; 
     });
 
     this.columnDefs = [
