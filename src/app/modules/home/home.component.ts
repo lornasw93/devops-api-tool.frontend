@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCheck, faSync, faExclamation, faTimes, faEye } from '@fortawesome/free-solid-svg-icons';
+import { TeamCityApiService } from "../../../core/services/team-city.api.service";
+import { OctopusDeployApiService } from "../../../core/services/octopus-deploy.api.service";
 
 @Component({
   selector: 'app-home',
@@ -11,6 +13,8 @@ export class HomeComponent implements OnInit {
   faExclamation = faExclamation;
   faTimes = faTimes;
   faEye = faEye;
+
+  latest10Builds: any;
 
   builds = [
     { "name": "Success", "value": 18 },
@@ -32,8 +36,14 @@ export class HomeComponent implements OnInit {
     domain: ['#198754', '#dc3545', '#6c757d']
   };
 
-  constructor() { }
+  constructor(private teamCityService: TeamCityApiService,
+    private octopusDeployService: OctopusDeployApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.teamCityService.getLatest10Builds().subscribe((data: any) => {
+      this.latest10Builds = data.build;
+
+      console.log(this.latest10Builds)
+    }); 
   }
 }

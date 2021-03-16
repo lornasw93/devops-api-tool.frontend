@@ -1,81 +1,30 @@
-<!-- <div class="container-fluid">
+<div class="container-fluid">
   <div class="jumbotron">
-    <h1>Welcome, Lorna</h1>
-    <p>Simplifying common DevOp tasks into a single web app using a combo of the Bitbucket, Team City and Octopus Deploy APIs.</p>
+    <h1><span>DevOps API Tool</span></h1>
+    <!--<p>Simplifying common DevOp tasks into a single web app using a combo of the Bitbucket, Team City and Octopus Deploy APIs.</p>-->
   </div>
-</div> -->
-
-
-
- 
-<!--
-
-<div class="container">
-  <h2>What are you looking for?</h2>
-  <h3>How about any of the following:</h3>
-  <ul>
-    <li>Current build queue</li>
-    <li>Active pull requests for a given project</li>
-  </ul>
 </div>
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
-      <fieldset>
-        <legend>Here's an overview for today (2/3/21)</legend>
-          <div class="row">
-            <div class="col-md-4">
-              <ngx-charts-advanced-pie-chart [results]="builds"
-                                             [gradient]="true"
-                                             [scheme]="scheme"
-                                             label="Builds">
-              </ngx-charts-advanced-pie-chart>
-            </div>
-            <div class="col-md-4">
-              <ngx-charts-advanced-pie-chart [results]="pullRequests"
-                                             [gradient]="true"
-                                             [scheme]="scheme"
-                                             label="Pull Requests">
-              </ngx-charts-advanced-pie-chart>
-            </div>
-            <div class="col-md-4">
-              <ngx-charts-advanced-pie-chart [results]="deployments"
-                                             [gradient]="true"
-                                             [scheme]="scheme"
-                                             label="Deployments">
-              </ngx-charts-advanced-pie-chart>
-            </div>
-          </div>
-      </fieldset>
-    </div>
-    <div class="col-md-6">
-      <fieldset>
-        <legend>This week so far (1/3/21 - 2/3/21)</legend>
-          <div class="row">
-            <div class="col-md-4">
-              <ngx-charts-advanced-pie-chart [results]="builds"
-                                             [gradient]="true"
-                                             [scheme]="scheme"
-                                             label="Builds">
-              </ngx-charts-advanced-pie-chart>
-            </div>
-            <div class="col-md-4">
-              <ngx-charts-advanced-pie-chart [results]="pullRequests"
-                                             [gradient]="true"
-                                             [scheme]="scheme"
-                                             label="Pull Requests">
-              </ngx-charts-advanced-pie-chart>
-            </div>
-            <div class="col-md-4">
-              <ngx-charts-advanced-pie-chart [results]="deployments"
-                                             [gradient]="true"
-                                             [scheme]="scheme"
-                                             label="Deployments">
-              </ngx-charts-advanced-pie-chart>
-            </div>
-          </div>
-      </fieldset>
-    </div>
-  </div>
-</div>-->
+    <div class="col">
+      <ngx-charts-pie-chart [results]="latest10Builds"
+                            [gradient]="true"
+                            [scheme]="scheme"
+                            label="Builds">
+      </ngx-charts-pie-chart>
+    </div> 
+  </div> 
+</div>
+
+
+
+
+
+
+<!--<h2>What are you looking for?</h2>
+  <h3>How about any of the following:</h3>
+  <ul>
+    <li>Current build queue</li>
+    <li>Active pull requests for a given project</li>
+  </ul>-->

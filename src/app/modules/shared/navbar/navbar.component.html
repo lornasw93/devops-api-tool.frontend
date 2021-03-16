@@ -1,39 +1,36 @@
-<nav><ul>
-  <li><a [routerLink]="['/']">
-      <fa-icon [icon]="faHome"></fa-icon>
-    </a></li>
-  <li><a [routerLink]="['/bitbucket']">Bitbucket</a></li>
-  <li><a [routerLink]="['/teamcity']">Team City</a></li>
-  <li>
-    <a [routerLink]="['/octopusdeploy']" data-toggle="dropdown">Octopus Deploy</a>
-    <ul>
-      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/build-infos']">Build Infos</a></li>
-      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/deployments']">Deployments</a></li>
-      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/deployment-processes']">Deployment Processes</a></li>
-      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/environments']">Environments</a></li>
-      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/interruptions']">Interruptions</a></li>
-      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/machines']">Machines</a></li>
-      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/projects']">Projects</a></li>
-      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/project-groups']">Project Groups</a></li>
-      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/releases']">Releases</a></li>
-      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/teams']">Teams</a></li>
-      <li><a class="dropdown-item" [routerLink]="['/octopusdeploy/users']">Users</a></li>
-    </ul>
-  </li>
-</ul>
-<ul>
-  <li><a [routerLink]="['/']">
-      <fa-icon [icon]="faUser"></fa-icon>
-    </a></li>
-</ul>
+<nav>
+  <span>
+    <a [routerLink]="['/']"><fa-icon [icon]="faHome"></fa-icon></a> /
+
+    <a [routerLink]="['/bitbucket']"><strong>Bitbucket</strong></a>
+    <a [routerLink]="['/teamcity']"><strong>Team City</strong></a>
+
+    <a [routerLink]="['/octopusdeploy']"><strong>Octopus Deploy</strong></a>
+
+    <a [routerLink]="['/octopusdeploy/build-infos']">Build Infos</a> /
+    <a [routerLink]="['/octopusdeploy/deployments']">Deployments</a> /
+    <a [routerLink]="['/octopusdeploy/deployment-processes']">Deployment Processes</a> /
+    <a [routerLink]="['/octopusdeploy/environments']">Environments</a> /
+    <a [routerLink]="['/octopusdeploy/interruptions']">Interruptions</a> /
+    <a [routerLink]="['/octopusdeploy/machines']">Machines</a> /
+    <a [routerLink]="['/octopusdeploy/projects']">Projects</a> /
+    <a [routerLink]="['/octopusdeploy/project-groups']">Project Groups</a> /
+    <a [routerLink]="['/octopusdeploy/releases']">Releases</a> /
+    <a [routerLink]="['/octopusdeploy/teams']">Teams</a> /
+    <a [routerLink]="['/octopusdeploy/users']">Users</a> /
+
+    <a [routerLink]="['/']"><fa-icon [icon]="faUser"></fa-icon></a> /
+
+  </span>
 </nav>
-<!-- 
+
+<!--
 <ul>
-  <li><a>Projects</a></li>
-  <li><a>Tests</a></li> 
-  <li><a>Builds</a></li>
-  <li><a>Pull Requests</a></li>
-  <li><a>Deployments</a></li>
-  <li><a>Releases</a></li>
-  <li><a>Teams/Users</a></li>
+  <a>Projects</a>
+  <a>Tests</a>
+  <a>Builds</a>
+  <a>Pull Requests</a>
+  <a>Deployments</a>
+  <a>Releases</a>
+  <a>Teams/Users</a>
 </ul> -->

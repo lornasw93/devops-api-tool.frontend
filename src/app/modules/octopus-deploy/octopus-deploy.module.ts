@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AgGridModule } from 'ag-grid-angular';
 import { PageHeaderComponent } from '../shared/components/page-header/page-header.component';
@@ -17,6 +17,7 @@ import { ProjectsComponent } from "./projects/projects.component";
 import { ReleasesComponent } from "./releases/releases.component";
 import { TeamsComponent } from "./teams/teams.component";
 import { UsersComponent } from "./users/users.component";
+import { NgxChartsModule } from "@swimlane/ngx-charts";
 
 @NgModule({
   declarations: [
@@ -38,8 +39,10 @@ import { UsersComponent } from "./users/users.component";
   imports: [
     CommonModule, 
     OctopusDeployRoutingModule,
-    AgGridModule,  
-  ],  
+    AgGridModule,
+    NgxChartsModule,
+  ],
+  providers:[DatePipe],
   exports:[ ]
 })
 export class OctopusDeployModule { }

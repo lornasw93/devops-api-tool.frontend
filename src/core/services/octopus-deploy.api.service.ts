@@ -16,6 +16,10 @@ export class OctopusDeployApiService extends BaseApiService<object> {
     return this.getAll(`deployments`);
   }
 
+  getDeploymentChart() {
+    return this.getAll(`deployments-chart`);
+  }
+
   getTeams() {
     return this.getAll(`teams`);
   }

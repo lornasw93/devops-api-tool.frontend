@@ -19,7 +19,7 @@ export class ProjectComponent implements OnInit {
     this.service.getProject(this.id).subscribe((data: any) => {
       this.project = data;
 
-      console.log(data)
+      console.log(data);
     });
   }
 }

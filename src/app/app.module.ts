@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -33,29 +33,30 @@ import { BitbucketModule } from "./modules/bitbucket/bitbucket.module";
     DateAgoPipe
   ],
   imports: [
-    CommonModule, 
+    CommonModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    SharedModule, 
+    SharedModule,
     NgxChartsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    SweetAlert2Module.forRoot(), 
+    SweetAlert2Module.forRoot(),
     TeamCityModule,
     BitbucketModule,
-    OctopusDeployModule 
+    OctopusDeployModule
   ],
-  // providers: [NgxChartsModule, DatePipe],
   providers: [
     //BaseApiService,
     OctopusDeployApiService,
     RoutingStateService,
     TeamCityApiService,
+    NgxChartsModule,
+   // DatePipe
   ],
   bootstrap: [AppComponent],
-  exports: [SharedModule,]
+  exports: [SharedModule, DateAgoPipe]
 })
 export class AppModule { }
 
