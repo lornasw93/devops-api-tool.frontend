@@ -9,6 +9,7 @@ import { FooterComponent } from "./footer/footer.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { RouterModule } from '@angular/router';
+import { LoadingSpinnerModule } from "./loading-spinner/loading-spinner.module";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RouterModule } from '@angular/router';
     AgGridModule.withComponents([
      StatusCellRendererComponent
     ]),
-    FontAwesomeModule
+    FontAwesomeModule,
+    LoadingSpinnerModule
   ],
   exports: [
     BackButtonComponent,

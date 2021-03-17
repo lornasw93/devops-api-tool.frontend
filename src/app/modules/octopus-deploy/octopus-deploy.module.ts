@@ -18,6 +18,12 @@ import { ReleasesComponent } from "./releases/releases.component";
 import { TeamsComponent } from "./teams/teams.component";
 import { UsersComponent } from "./users/users.component";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { DeploymentsListComponent } from "./deployments-list/deployments-list.component";
+import { DepartmentListActionsComponent } from "./department-list-actions/department-list-actions.component";
+import { LoadingSpinnerModule } from "../shared/loading-spinner/loading-spinner.module";
+import { OctopusDeployApiService } from "../../../core/services/octopus-deploy.api.service";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -33,16 +39,22 @@ import { NgxChartsModule } from "@swimlane/ngx-charts";
     ProjectsComponent,
     ReleasesComponent,
     TeamsComponent,
-    UsersComponent,  
-    ProjectComponent
+    UsersComponent,
+    ProjectComponent,
+    DeploymentsListComponent,
+    DepartmentListActionsComponent
   ],
   imports: [
     CommonModule, 
     OctopusDeployRoutingModule,
     AgGridModule,
     NgxChartsModule,
+    FontAwesomeModule,
+    LoadingSpinnerModule,
+    SweetAlert2Module
   ],
-  providers:[DatePipe],
+  providers: [OctopusDeployApiService, DatePipe],
+  entryComponents: [DepartmentListActionsComponent],
   exports:[ ]
 })
 export class OctopusDeployModule { }
