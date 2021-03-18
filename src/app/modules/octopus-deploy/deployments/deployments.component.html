@@ -8,13 +8,13 @@
 
 <button (click)="goBack();" class="btn btn-primary">Go Back</button>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col">
+    <div class="col-md-6">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Since the beginning of time ({{deployedByLineChartDataCount}})</h4>
-          <p>Description here about what the chart illustrates</p>
+          <h5 class="card-title">Since the beginning of time ({{deployedByLineChartDataCount}})</h5>
+          <p>Grouped by month/year. Description here about what the chart illustrates</p>
         </div>
         <div class="card-body">
           <ngx-charts-line-chart [view]="view"
@@ -30,15 +30,12 @@
                                  [results]="createdLineChartData">
           </ngx-charts-line-chart>
         </div>
-        <div class="card-footer"></div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
+    </div> 
+    <div class="col-md-6">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">#whodunit ({{deployedByPieChartDataCount}})</h4>
+          <h5 class="card-title">#whodunit ({{deployedByPieChartDataCount}})</h5>
           <p>Description here about what the chart illustrates</p>
         </div>
         <div class="card-body">
@@ -53,7 +50,6 @@
                                 [doughnut]="false">
           </ngx-charts-pie-chart>
         </div>
-        <div class="card-footer"></div>
       </div>
     </div>
   </div>
@@ -61,13 +57,12 @@
     <div class="col">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">All ({{deployedByLineChartDataCount}})</h4>
+          <h5 class="card-title">Data dump ({{deployedByLineChartDataCount}})</h5>
           <p>Description here about what the grid illustrates</p>
         </div>
         <div class="card-body">
           <app-deployment-list></app-deployment-list>
         </div>
-        <div class="card-footer"></div>
       </div>
     </div>
   </div>

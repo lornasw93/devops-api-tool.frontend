@@ -8,11 +8,13 @@
         </div>
       </div>
       <ng-template #deploymentTable>
+        <button (click)="onExport();" class="btn btn-primary">Export as CSV</button>
+        
         <div id="grid-wrapper">
           <ag-grid-angular id="deployments-list"
                            class="ag-theme-material"
                            [rowData]="rowData"
-                           [gridOptions]="gridOptions"> 
+                           [gridOptions]="gridOptions">
           </ag-grid-angular>
         </div>
       </ng-template>

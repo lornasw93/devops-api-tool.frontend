@@ -41,12 +41,12 @@ export class DeploymentsComponent implements OnInit {
   ngOnInit(): void {
     this.service.getDeployments30().subscribe((data: any) => {
       this.deployedByPieChartDataCount = data.Items.length;
-      this.deployedByPieChartData = this.buildPieChartData(data.Items, 'DeployedBy');
+      this.deployedByPieChartData = this.buildPieChartData(data.Items, 'DeployedBy'); 
     });
 
     this.service.getDeploymentsAll().subscribe((data: any) => {
       this.deployedByLineChartDataCount = data.Items.length;
-      this.createdLineChartData = [{ 'name': 'Created', 'series': this.buildLineChartData(data.Items, 'Created') }]; 
+      this.createdLineChartData = [{ 'name': 'Created', 'series': this.buildLineChartData(data.Items.reverse(), 'Created') }];
     });
   }
 

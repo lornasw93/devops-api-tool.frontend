@@ -3,8 +3,6 @@
 
 @import "theme.less";
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +15,7 @@ body {
 
 .container-fluid {
   padding: 0px;
+  margin: 0;
 }
 
 h1 {
@@ -24,7 +23,7 @@ h1 {
   background-color: @almost-black;
   color: #fff;
   text-transform: uppercase;
-  padding: 30px 25px;
+  padding: 15px 25px;
   font-family: 'Roboto Thin', sans-serif;
   letter-spacing: 3px;
 }
@@ -147,11 +146,10 @@ ag-grid-angular.ag-theme-material {
       -ms-user-select: text;
       -webkit-user-select: text;
       //overflow: visible;
-
-      fa-icon { 
+      fa-icon {
         margin-left: 2px;
         margin-right: 2px;
-        color: @almost-black; 
+        color: @pink;
       }
 
       &.ag-cell-focus {
@@ -203,9 +201,12 @@ ag-grid-angular.ag-theme-material {
   }
 }
 
-div.card .card-header {
-  h4 {
-    font-family: 'Roboto Light', sans-serif;
-    text-transform: uppercase;
+div.card {
+  font-family: 'Roboto Light', sans-serif;
+
+  .card-header {
+    h5 {
+      text-transform: uppercase;
+    }
   }
 }

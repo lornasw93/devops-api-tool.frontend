@@ -3,7 +3,7 @@ import { DatePipe } from "@angular/common/common";
 import { OctopusDeployApiService } from "./services/octopus-deploy.api.service";
 
 export abstract class BaseGrid implements OnInit {
-  protected paginationPageSize = 30;
+  protected paginationPageSize = 20;
   gridOptions;
   rowData: any[];
   protected columnHeaders;
@@ -32,7 +32,7 @@ export abstract class BaseGrid implements OnInit {
     this.gridOptions = ({
       context: {
         componentParent: this
-      },
+      }, 
       columnDefs: this.getColumnHeaders(),
       defaultColDef: { sortable: true, filter: true, resizable: false, minWidth: 180 },
       domLayout: 'autoHeight',
@@ -69,7 +69,7 @@ export abstract class BaseGrid implements OnInit {
       onGridSizeChanged: (event) => this.onGridSizeChanged(event)
     });
   }
-
+    
   filterRowData(entityId) {
     return this.rowData = this.rowData.filter(s => s.id !== entityId);
   }
@@ -134,5 +134,14 @@ export abstract class BaseGrid implements OnInit {
 
   getRowNode(rowId) {
     return this.gridOptions.api.getRowNode(rowId);
+  }
+
+  onExport() {
+    const options = {
+      suppressQuotes: 'none',
+      columnSeparator: ','
+    };
+
+    this.gridApi.exportDataAsCsv(options);
   }
 }

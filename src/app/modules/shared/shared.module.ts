@@ -11,6 +11,7 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { RouterModule } from '@angular/router';
 import { LoadingSpinnerModule } from "./loading-spinner/loading-spinner.module";
 import { IconCellRendererComponent } from "./components/icon-cell-renderer/icon-cell-renderer.component";
+import { HyperlinkCellRendererComponent } from './components/hyperlink-cell-renderer/hyperlink-cell-renderer.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,13 @@ import { IconCellRendererComponent } from "./components/icon-cell-renderer/icon-
     StatusCellRendererComponent,
     PageHeaderComponent,
     IconCellRendererComponent,
+    HyperlinkCellRendererComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     AgGridModule.withComponents([
-      StatusCellRendererComponent, IconCellRendererComponent
+      StatusCellRendererComponent, IconCellRendererComponent,HyperlinkCellRendererComponent
     ]),
     FontAwesomeModule,
     LoadingSpinnerModule

@@ -2,7 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { BaseGrid } from "../../../../core/base.grid";
 import { OctopusDeployApiService } from "../../../../core/services/octopus-deploy.api.service";
-import { IconCellRendererComponent } from "../../shared/components/icon-cell-renderer/icon-cell-renderer.component";
+import { HyperlinkCellRendererComponent } from "../../shared/components/hyperlink-cell-renderer/hyperlink-cell-renderer.component";
 import { DeploymentListActionsComponent } from "../deployment-list-actions/deployment-list-actions.component";
 
 @Component({
@@ -12,7 +12,7 @@ import { DeploymentListActionsComponent } from "../deployment-list-actions/deplo
 export class DeploymentListComponent extends BaseGrid {
   isLoading: boolean;
   noDeployments: boolean;
-  
+
   constructor(service: OctopusDeployApiService,
     datePipe: DatePipe) {
     super(service, datePipe);
@@ -27,8 +27,8 @@ export class DeploymentListComponent extends BaseGrid {
       { field: 'Name' },
       { field: 'Created', headerName: 'Created', type: 'dateColumn' },
       {
-        field: 'DeployedBy', 
-        cellRendererFramework: IconCellRendererComponent 
+        field: 'DeployedBy',
+        //cellRendererFramework: IconCellRendererComponent
       },
       {
         field: 'Changes',
@@ -38,9 +38,11 @@ export class DeploymentListComponent extends BaseGrid {
       },
       {
         headerName: 'Work Items',
-        cellRenderer: params => {
-          return params.value;
-        }
+        valueGetter: this.workItemsValueGetter,
+      },
+      {
+        headerName: 'Build Number',
+        cellRendererFramework: HyperlinkCellRendererComponent
       },
       {
         type: 'buttonColumn',
@@ -48,6 +50,56 @@ export class DeploymentListComponent extends BaseGrid {
       }
     ];
   }
+
+  workItemsValueGetter(params) {
+    let count = 0;
+    const changes = params.data.Changes;
+
+    if (changes.length > 0) {
+      for (let i = 0; i < changes.length; i++) {
+        count += changes[i].WorkItems.length;
+      }
+    }
+
+    return count;
+  }
+
+  //buildNumberValueGetter(params) {
+  //  let buildNumber = '';
+  //  let buildUrl = '';
+  //  const changes = params.data.Changes;
+
+  //  if (changes.length > 0) {
+  //    for (let i = 0; i < changes.length; i++) {
+  //      const buildInfo = changes[i].BuildInformation;
+
+  //      for (let j = 0; j < buildInfo.length; j++) {
+  //        buildNumber += buildInfo[j].BuildNumber;
+  //        buildUrl += buildInfo[j].BuildUrl;
+  //      }
+  //    }
+  //  }
+
+  //  return buildNumber === '' ? '' : '<a href="' + buildUrl + '">#' + buildNumber + '</a>';
+  //}
+
+  //commitsValueGetter(params) {
+  //  let buildNumber = '';
+  //  const changes = params.data.Changes;
+
+  //  if (changes.length > 0) {
+  //    for (let i = 0; i < changes.length; i++) {
+  //      console.log(changes[i].BuildInformation);
+
+  //      for (let j = 0; j < changes[i].BuildInformation.length; j++) {
+  //        buildNumber += changes[i].BuildInformation[j].BuildNumber;
+  //      }
+  //    }
+  //  }
+
+  //  return buildNumber === '' ? '' : '#' + buildNumber;
+  //}
+
 
   protected getRowData(): void {
     this.isLoading = true;
