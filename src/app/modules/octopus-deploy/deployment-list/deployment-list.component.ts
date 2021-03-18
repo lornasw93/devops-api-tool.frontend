@@ -2,23 +2,20 @@ import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { BaseGrid } from "../../../../core/base.grid";
 import { OctopusDeployApiService } from "../../../../core/services/octopus-deploy.api.service";
-import { DepartmentListActionsComponent } from "../department-list-actions/department-list-actions.component";
+import { IconCellRendererComponent } from "../../shared/components/icon-cell-renderer/icon-cell-renderer.component";
+import { DeploymentListActionsComponent } from "../deployment-list-actions/deployment-list-actions.component";
 
 @Component({
-  selector: 'app-deployments-list',
-  templateUrl: './deployments-list.component.html'
+  selector: 'app-deployment-list',
+  templateUrl: './deployment-list.component.html'
 })
-export class DeploymentsListComponent extends BaseGrid {
+export class DeploymentListComponent extends BaseGrid {
   isLoading: boolean;
   noDeployments: boolean;
-
+  
   constructor(service: OctopusDeployApiService,
     datePipe: DatePipe) {
     super(service, datePipe);
-  }
-
-  a1000ValueGetter(params) {
-    return params.data;
   }
 
   protected getColumnHeaders() {
@@ -29,9 +26,11 @@ export class DeploymentsListComponent extends BaseGrid {
       //{ field: 'ReleaseId', hide: true },
       { field: 'Name' },
       { field: 'Created', headerName: 'Created', type: 'dateColumn' },
-      { field: 'DeployedBy' },
       {
-        colId: 'ch',
+        field: 'DeployedBy', 
+        cellRendererFramework: IconCellRendererComponent 
+      },
+      {
         field: 'Changes',
         cellRenderer: params => {
           return params.value.length;
@@ -45,16 +44,16 @@ export class DeploymentsListComponent extends BaseGrid {
       },
       {
         type: 'buttonColumn',
-        cellRendererFramework: DepartmentListActionsComponent
+        cellRendererFramework: DeploymentListActionsComponent
       }
     ];
   }
 
   protected getRowData(): void {
     this.isLoading = true;
-    this.service.getDeployments().subscribe((data: any) => {
+    this.service.getDeploymentsAll().subscribe((data: any) => {
       this.rowData = data.Items;
-      this.hasDeployments(); 
+      this.hasDeployments();
     }).add(() => {
       this.isLoading = false;
     });
@@ -83,12 +82,4 @@ export class DeploymentsListComponent extends BaseGrid {
   hasDeployments() {
     this.noDeployments = this.rowData == null || this.rowData.length === 0;
   }
-
-  //this.defaultColDef = {
-  //  sortable: true,
-  //  resizable: true,
-  //  filter: false,
-  //  autoHeight: true,
-  //  rowSelection: 'single'
-  //};
 }

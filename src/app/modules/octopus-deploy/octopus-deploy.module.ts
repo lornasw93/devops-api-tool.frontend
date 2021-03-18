@@ -1,8 +1,12 @@
 import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { NgxChartsModule } from "@swimlane/ngx-charts";
 import { AgGridModule } from 'ag-grid-angular';
-import { PageHeaderComponent } from '../shared/components/page-header/page-header.component';
-import { BuildInfosComponent } from "./build-infos/build-infos.component";
+import { OctopusDeployApiService } from "../../../core/services/octopus-deploy.api.service";
+import { LoadingSpinnerModule } from "../shared/loading-spinner/loading-spinner.module";
+import { BuildInfosComponent } from "./build-infos/build-infos.component"; 
 import { DeploymentProcessesComponent } from "./deployment-processes/deployment-processes.component";
 import { DeploymentComponent } from "./deployment/deployment.component";
 import { DeploymentsComponent } from "./deployments/deployments.component";
@@ -17,13 +21,8 @@ import { ProjectsComponent } from "./projects/projects.component";
 import { ReleasesComponent } from "./releases/releases.component";
 import { TeamsComponent } from "./teams/teams.component";
 import { UsersComponent } from "./users/users.component";
-import { NgxChartsModule } from "@swimlane/ngx-charts";
-import { DeploymentsListComponent } from "./deployments-list/deployments-list.component";
-import { DepartmentListActionsComponent } from "./department-list-actions/department-list-actions.component";
-import { LoadingSpinnerModule } from "../shared/loading-spinner/loading-spinner.module";
-import { OctopusDeployApiService } from "../../../core/services/octopus-deploy.api.service";
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { DeploymentListComponent } from "./deployment-list/deployment-list.component";
+import { DeploymentListActionsComponent } from "./deployment-list-actions/deployment-list-actions.component";
 
 @NgModule({
   declarations: [
@@ -41,8 +40,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     TeamsComponent,
     UsersComponent,
     ProjectComponent,
-    DeploymentsListComponent,
-    DepartmentListActionsComponent
+    DeploymentListComponent,
+    DeploymentListActionsComponent
   ],
   imports: [
     CommonModule, 
@@ -54,7 +53,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     SweetAlert2Module
   ],
   providers: [OctopusDeployApiService, DatePipe],
-  entryComponents: [DepartmentListActionsComponent],
+  entryComponents: [DeploymentListActionsComponent],
   exports:[ ]
 })
 export class OctopusDeployModule { }

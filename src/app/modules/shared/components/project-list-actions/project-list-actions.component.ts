@@ -8,8 +8,7 @@ import { ICellRendererAngularComp } from 'ag-grid-angular';
   templateUrl: './project-list-actions.component.html'
 })
 export class ProjectListActionsComponent implements OnInit, ICellRendererAngularComp, AfterViewInit {
-  faInfo = faInfo;
-  faEllipsisV = faEllipsisV;
+  faInfo = faInfo; 
   faExternalLinkAlt = faExternalLinkAlt;
 
   public showEllipsis: boolean = false;

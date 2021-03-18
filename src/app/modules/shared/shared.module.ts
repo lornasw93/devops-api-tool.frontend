@@ -10,6 +10,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { RouterModule } from '@angular/router';
 import { LoadingSpinnerModule } from "./loading-spinner/loading-spinner.module";
+import { IconCellRendererComponent } from "./components/icon-cell-renderer/icon-cell-renderer.component";
 
 @NgModule({
   declarations: [
@@ -19,12 +20,13 @@ import { LoadingSpinnerModule } from "./loading-spinner/loading-spinner.module";
     ProjectListActionsComponent,
     StatusCellRendererComponent,
     PageHeaderComponent,
+    IconCellRendererComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     AgGridModule.withComponents([
-     StatusCellRendererComponent
+      StatusCellRendererComponent, IconCellRendererComponent
     ]),
     FontAwesomeModule,
     LoadingSpinnerModule

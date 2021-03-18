@@ -1,0 +1,8 @@
+<span *ngIf="icons != null; else notSys">
+  <span *ngFor="let icon of icons">
+    <fa-icon [icon]="icon"></fa-icon>
+  </span>
+</span>
+<ng-template #notSys>
+  {{params.value}}
+</ng-template>

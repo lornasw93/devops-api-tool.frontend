@@ -52,8 +52,8 @@ export abstract class BaseGrid implements OnInit {
           field: 'value',
           resizable: false,
           filter: false,
-          width: 1,
-          maxWidth: 1,
+          //width: 1,
+          //maxWidth: 1,
           colId: 'buttons',
           suppressSizeToFit: true,
           cellClass: ['ag-cell-actions']

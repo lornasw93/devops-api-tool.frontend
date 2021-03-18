@@ -12,14 +12,14 @@ export class OctopusDeployApiService extends BaseApiService<object> {
     super(http);
   }
 
-  getDeployments() {
-    return this.getAll(`deployments`);
+  getDeployments30() {
+    return this.getAll(`deployments-30`);
   }
 
-  getDeploymentChart() {
-    return this.getAll(`deployments-chart`);
+  getDeploymentsAll() {
+    return this.getAll(`deployments-all`);
   }
-
+  
   getTeams() {
     return this.getAll(`teams`);
   }
