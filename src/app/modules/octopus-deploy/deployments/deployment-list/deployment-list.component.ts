@@ -1,9 +1,10 @@
 import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { BaseGrid } from "../../../../core/base.grid";
-import { OctopusDeployApiService } from "../../../../core/services/octopus-deploy.api.service";
-import { HyperlinkCellRendererComponent } from "../../shared/components/hyperlink-cell-renderer/hyperlink-cell-renderer.component";
 import { DeploymentListActionsComponent } from "../deployment-list-actions/deployment-list-actions.component";
+import { BaseGrid } from "../../../../../core/base.grid";
+import { OctopusDeployApiService } from "../../../../../core/services/octopus-deploy.api.service";
+import { HyperlinkCellRendererComponent } from
+  "../../../shared/grids/cell-renderers/hyperlink-cell-renderer/hyperlink-cell-renderer.component";
 
 @Component({
   selector: 'app-deployment-list',
@@ -13,9 +14,9 @@ export class DeploymentListComponent extends BaseGrid {
   isLoading: boolean;
   noDeployments: boolean;
 
-  constructor(service: OctopusDeployApiService,
+  constructor(private readonly service: OctopusDeployApiService,
     datePipe: DatePipe) {
-    super(service, datePipe);
+    super(datePipe);
   }
 
   protected getColumnHeaders() {
@@ -99,7 +100,6 @@ export class DeploymentListComponent extends BaseGrid {
 
   //  return buildNumber === '' ? '' : '#' + buildNumber;
   //}
-
 
   protected getRowData(): void {
     this.isLoading = true;

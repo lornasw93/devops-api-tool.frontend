@@ -1,10 +1,7 @@
 <div class="jumbotron jumbotron-fluid text-center">
   <h1><span>Deployments</span></h1>
-  <!-- <h1 class="display-4">Fluid jumbotron</h1>
-  <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
 </div>
-
-<!-- <app-page-header title="Deployments ({{count}})" description=""></app-page-header> -->
+<!--<app-page-header title="Deployments" description="https://cascadeengineering.octopus.app/"></app-page-header>-->
 
 <button (click)="goBack();" class="btn btn-primary">Go Back</button>
 
@@ -17,6 +14,8 @@
           <p>Grouped by month/year. Description here about what the chart illustrates</p>
         </div>
         <div class="card-body">
+          <!--<app-all-deployments-line-chart></app-all-deployments-line-chart>-->
+
           <ngx-charts-line-chart [view]="view"
                                  [scheme]="colorScheme"
                                  [legend]="legend"
@@ -31,26 +30,20 @@
           </ngx-charts-line-chart>
         </div>
       </div>
-    </div> 
+    </div>
     <div class="col-md-6">
-      <div class="card">
-        <div class="card-header">
-          <h5 class="card-title">#whodunit ({{deployedByPieChartDataCount}})</h5>
-          <p>Description here about what the chart illustrates</p>
-        </div>
-        <div class="card-body">
-          <ngx-charts-pie-chart [view]="view"
-                                [scheme]="colorScheme"
-                                [results]="deployedByPieChartData"
-                                [gradient]="true"
-                                [legend]="true"
-                                [legendTitle]="legendTitle"
-                                [explodeSlices]="false"
-                                [labels]="true"
-                                [doughnut]="false">
-          </ngx-charts-pie-chart>
-        </div>
-      </div>
+      <!--<app-deployed-by-pie-chart></app-deployed-by-pie-chart>-->
+      
+      <!--<ngx-charts-pie-chart [view]="view"
+                            [scheme]="colorScheme"
+                            [results]="deployedByPieChartData"
+                            [gradient]="true"
+                            [legend]="true"
+                            [legendTitle]="legendTitle"
+                            [explodeSlices]="false"
+                            [labels]="true"
+                            [doughnut]="false">
+      </ngx-charts-pie-chart>-->
     </div>
   </div>
   <div class="row">

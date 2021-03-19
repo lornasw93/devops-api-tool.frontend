@@ -1,6 +1,7 @@
 import { OnInit } from '@angular/core';
 import { DatePipe } from "@angular/common/common";
 import { OctopusDeployApiService } from "./services/octopus-deploy.api.service";
+import { TeamCityApiService } from "./services/team-city.api.service";
 
 export abstract class BaseGrid implements OnInit {
   protected paginationPageSize = 20;
@@ -13,8 +14,7 @@ export abstract class BaseGrid implements OnInit {
   protected rowClassRules;
   protected columnsToHide: string[];
 
-  protected constructor(readonly service: OctopusDeployApiService,
-    private readonly datePipe: DatePipe) { }
+  constructor(private readonly datePipe: DatePipe) { }
 
   protected abstract getColumnHeaders(): any[];
   protected abstract getRowData(): void;
@@ -32,7 +32,7 @@ export abstract class BaseGrid implements OnInit {
     this.gridOptions = ({
       context: {
         componentParent: this
-      }, 
+      },
       columnDefs: this.getColumnHeaders(),
       defaultColDef: { sortable: true, filter: true, resizable: false, minWidth: 180 },
       domLayout: 'autoHeight',
@@ -69,7 +69,7 @@ export abstract class BaseGrid implements OnInit {
       onGridSizeChanged: (event) => this.onGridSizeChanged(event)
     });
   }
-    
+
   filterRowData(entityId) {
     return this.rowData = this.rowData.filter(s => s.id !== entityId);
   }

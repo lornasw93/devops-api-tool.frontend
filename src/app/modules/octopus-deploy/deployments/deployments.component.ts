@@ -8,12 +8,8 @@ import { OctopusDeployApiService } from "../../../../core/services/octopus-deplo
   templateUrl: './deployments.component.html'
 })
 export class DeploymentsComponent implements OnInit {
-  deployedByPieChartDataCount: number;
   deployedByLineChartDataCount: number;
-  deployedByPieChartData: any;
   createdLineChartData: any[];
-
-  view: any[] = [900, 400];
 
   legendTitle = 'Deployed by';
 
@@ -38,39 +34,15 @@ export class DeploymentsComponent implements OnInit {
     private readonly service: OctopusDeployApiService,
     private readonly datePipe: DatePipe) { }
 
-  ngOnInit(): void {
-    this.service.getDeployments30().subscribe((data: any) => {
-      this.deployedByPieChartDataCount = data.Items.length;
-      this.deployedByPieChartData = this.buildPieChartData(data.Items, 'DeployedBy'); 
-    });
+  ngOnInit(): void {}
 
+  ngAfterViewInit() { 
     this.service.getDeploymentsAll().subscribe((data: any) => {
       this.deployedByLineChartDataCount = data.Items.length;
       this.createdLineChartData = [{ 'name': 'Created', 'series': this.buildLineChartData(data.Items.reverse(), 'Created') }];
     });
   }
-
-  buildPieChartData(records, field) {
-    const groupBy = (array, key) => {
-      return array.reduce((result, currentValue) => {
-        (result[currentValue[key]] = result[currentValue[key]] || []).push(currentValue);
-        return result;
-      }, {});
-    };
-
-    const source = groupBy(records, field);
-
-    var groupedData = [];
-
-    for (let prop in source) {
-      if (Object.prototype.hasOwnProperty.call(source, prop)) {
-        groupedData.push({ "name": prop, "value": source[prop].length });
-      }
-    }
-
-    return groupedData;
-  }
-
+   
   buildLineChartData(records, field) {
     const groupBy = (array, key) => {
       return array.reduce((result, currentValue) => {

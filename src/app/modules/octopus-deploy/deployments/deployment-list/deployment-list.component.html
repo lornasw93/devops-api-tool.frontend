@@ -1,0 +1,17 @@
+<app-loading-small *ngIf="isLoading; else grid" message="Loading Deployments..."></app-loading-small>
+<ng-template #grid>
+  <div *ngIf="noDeployments; else deploymentTable">
+    <div class="alert alert-info" role="alert">
+      <p class="mb-0">No Deployments found</p>
+    </div>
+  </div>
+  <ng-template #deploymentTable>
+    <button (click)="onExport();" class="btn btn-primary">Export as CSV</button>
+    <div id="grid-wrapper">
+      <ag-grid-angular id="deployment-list"
+                       class="ag-theme-material"
+                       [rowData]="rowData"
+                       [gridOptions]="gridOptions"></ag-grid-angular>
+    </div>
+  </ng-template>
+</ng-template>

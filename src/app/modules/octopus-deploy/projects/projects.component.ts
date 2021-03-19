@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OctopusDeployApiService } from "../../../../core/services/octopus-deploy.api.service";
-import { StatusCellRendererComponent } from "../../shared/components/status-cell-renderer/status-cell-renderer.component";
-import { ProjectListActionsComponent } from "../../shared/components/project-list-actions/project-list-actions.component";
+import { StatusCellRendererComponent } from "../../shared/grids/cell-renderers/status-cell-renderer/status-cell-renderer.component";
+import { ProjectListActionsComponent } from "../../shared/project-list-actions/project-list-actions.component";
 
 @Component({
   selector: 'app-projects',

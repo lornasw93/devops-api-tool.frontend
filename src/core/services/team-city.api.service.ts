@@ -22,10 +22,11 @@ export class TeamCityApiService extends BaseApiService<object> {
     return this.get(`builds-queue`);
   }
 
-  getOverview(): Observable<any> {
-    return this.getAll(`home-overview`);
+  getBuilds20() {
+    return this.getAll('builds-20');
+    //return this.getAll(`projects`);
   }
-  
+
   getProject(id) {
     return this.get('projects-id');
     //return this.get(`projects/${id}`);
@@ -33,11 +34,6 @@ export class TeamCityApiService extends BaseApiService<object> {
 
   getProjects() {
     return this.getAll('projects');
-    //return this.getAll(`projects`);
-  }
-  
-  getLatest10Builds() {
-    return this.getAll('builds-latest-10');
     //return this.getAll(`projects`);
   }
   

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RoutingStateService } from "../../../../../core/services/routing-state.service";
+import { RoutingStateService } from "../../../../core/services/routing-state.service";
 
 @Component({
   selector: 'app-back-button',

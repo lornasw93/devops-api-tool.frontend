@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class="container-fluid">
+<!--<div class="container-fluid">
   <div class="row">
     <div class="col">
       <ngx-charts-pie-chart [results]="latest10Builds"
@@ -13,11 +13,19 @@
                             [scheme]="scheme"
                             label="Builds">
       </ngx-charts-pie-chart>
-    </div> 
-  </div> 
+    </div>
+  </div>
+</div>-->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ngx-charts-tree-map [results]="single" [view]="view">
+      </ngx-charts-tree-map> 
+    </div>
+  </div>
 </div>
-
-
 
 
 

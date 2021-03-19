@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing'; 
 import { BackButtonComponent } from './back-button.component';
-import { RoutingStateService } from "../../../../../core/services/routing-state.service";
-import { RouterTestingModule } from '@angular/router/testing';
+import { RoutingStateService } from "../../../../core/services/routing-state.service";
 
 describe('BackButtonComponent', () => {
   let component: BackButtonComponent;

@@ -1,7 +1,6 @@
-import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { Component } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
-import { Status } from "../../../../../core/models/status.model";
+import { Status } from "../../../../../../core/models/status.model";
 
 @Component({
   selector: 'app-status-cell-renderer',
